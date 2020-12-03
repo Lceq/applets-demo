@@ -1,0 +1,5 @@
+<template name="ranking-list">
+  <view>
+    Ranking List
+  </view>
+</template>

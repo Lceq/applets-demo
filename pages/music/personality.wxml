@@ -1,0 +1,6 @@
+<template name="personality">
+  <view>
+    personality
+    <button bindtap="onClickButton">点击成功</button>
+  </view>
+</template>

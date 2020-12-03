@@ -1,0 +1,25 @@
+<!-- weather -->
+
+<!-- tab -->
+<view class="tab">
+   <view class="tab-item {{tabIndex == 0 ?'active' : ''}}" bindtap="clickTabItem" data-t="0">
+      <text>个性推荐</text> 
+   </view>
+   <view class="tab-item {{tabIndex == 1 ?'active' : ''}}" bindtap="clickTabItem" data-t="1"> 
+      <text>歌单</text>
+   </view>
+   <view class="tab-item {{tabIndex == 2 ?'active' : ''}}" bindtap="clickTabItem" data-t="2">
+      <text>主播电台</text>
+   </view>
+   <view class="tab-item {{tabIndex == 3 ?'active' : ''}}" bindtap="clickTabItem" data-t="3">
+      <text>排行榜</text>
+   </view>
+</view>
+<view>
+  <!-- 引入模板 -->
+<import src="personality.wxml"/> 
+<import src="song-sheet.wxml"></import>
+<import src="radio-station.wxml"></import>
+<import src="ranking-list.wxml"></import>
+<template is="{{tabIs}}"/>
+</view>

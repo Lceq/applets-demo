@@ -1,0 +1,5 @@
+<template name="radio-station">
+  <view>
+    radio station
+  </view>
+</template>
