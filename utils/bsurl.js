@@ -20,5 +20,4 @@ const request = (url,data) => {
     })
   })
 }
-console.log(request,'request');
 module.exports = {request}

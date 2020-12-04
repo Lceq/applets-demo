@@ -1,6 +1,6 @@
 // pages/weather/weather.js
 const app = getApp()
-const API = require('../../api/personality')
+const {banner,personalized,personalizedNewsong,personalizedMv,personalpersonalizedDjprogramizedMv} = require('../../api/personality')
 Page({
 
   /**
@@ -9,7 +9,11 @@ Page({
   data: {
     mes: 'sssssssssss',
     tabIndex: 0,
-    tabIs: 'personality'
+    tabIs: 'personality',
+    personality: {
+      bannerList: [],
+      personalizList: [],
+    }
   },
   clickTabItem(e){
     this.setData({tabIndex: e.currentTarget.dataset.t})
@@ -24,18 +28,35 @@ Page({
       this.setData({tabIs: 'ranking-list'})
     } 
   },
-  onClickButton(){
-    console.log(API,API.playlistCatlist,'playlistCatlist');
-    API.playlistCatlist({}).then(res => {
-      console.log(res,'success')
-    })
-    
-  },
+  // 轮播图
+  getBannerRequest(){
+    return banner({}).then(res => {
+      if(res.code === 200){
+        this.data.personality.bannerList =  res.banners
+        this.setData({personality: this.data.personality})
+       }
+     })
+   },
+   // 推荐歌单
+   getPersonalizList(){
+     return personalized({}).then(res => {
+       if(res.code === 200){
+         console.log(res,'res');
+         this.data.personality.personalizList = res.result
+         this.setData({personality: this.data.personality })
+       }
+     })
+   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+   
+    let b =  this.getBannerRequest();
+    let p =  this.getPersonalizList();
+    Promise.all([b,p]).then(res => {
+      
+    })
   },
 
   /**

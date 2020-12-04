@@ -1,6 +1,61 @@
 <template name="personality">
+  <!-- 轮播图 -->
   <view>
-    personality
-    <button bindtap="onClickButton">点击成功</button>
+    <swiper indicator-dots="true" autoplay="true" >
+      <swiper-item  wx:for="{{personality.bannerList}}" wx:key="*this">
+        <image src="{{item.imageUrl}}" width="750" height="290"></image>
+      </swiper-item>
+      </swiper>
+  </view>
+  <!-- 导航 -->
+  <view>
+    <view class="nav">
+      <view>
+        <navigator url="../weather/weather">
+        <view class="nav-item">
+          <image src="../../image/fm/fm-nav.png"></image>
+         </view>
+        私人FM
+      </navigator>
+      </view>
+      <view>
+        <navigator url="../weather/weather">
+          <view class="nav-item">
+            <view class="days"> 4</view>
+          </view>
+          每日歌曲推荐
+        </navigator>
+      </view>
+      <view>
+        <navigator url="../weather/weather">
+          <view class="nav-item">
+            <image src="../../image/personality/hot-nav.png"></image>
+          </view>
+          云音乐热歌榜
+        </navigator>
+      </view>
+    </view>
+
+  </view>
+  <!-- 推荐歌单 -->
+  <view>
+    <view class="play-nav">
+      <view>
+        <image src="../../image/personality/play-list.png" width="30"></image>
+        <text>推荐歌单</text>
+      </view>
+      <view class="play-more">更多>></view>
+    </view>
+   
+    <view class="play-list">
+      <view class="play-item" wx:for="{{personality.personalizList}}"  wx:key="id">
+        <navigator>
+          <view>
+            <image class="i" src="{{item.picUrl}}"></image>
+          </view>
+          <text>{{item.name}}</text>
+        </navigator>
+      </view>
+    </view>
   </view>
 </template>
