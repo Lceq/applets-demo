@@ -1,5 +1,5 @@
 <template name="song-sheet">
-  <view>
+  <view class="main">
     song sheet
   </view>
 </template>

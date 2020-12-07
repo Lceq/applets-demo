@@ -13,6 +13,9 @@ Page({
     personality: {
       bannerList: [],
       personalizList: [],
+      newSongList: [],
+      mvList: [],
+      radioStationList: [],
     }
   },
   clickTabItem(e){
@@ -41,11 +44,38 @@ Page({
    getPersonalizList(){
      return personalized({}).then(res => {
        if(res.code === 200){
-         console.log(res,'res');
          this.data.personality.personalizList = res.result
          this.setData({personality: this.data.personality })
        }
      })
+   },
+   // 最新音乐
+   getNewSongRequest(){
+     return personalizedNewsong({}).then(res => {
+      if(res.code === 200){
+        this.data.personality.newSongList = res.result
+        this.setData({personality: this.data.personality })
+      }
+     })
+   },
+   // 推荐MV
+   getMVListRequest(){
+     return personalizedMv({}).then(res => {
+       if(res.code === 200){
+        this.data.personality.mvList = res.result
+        this.setData({personality: this.data.personality })
+       }
+     })
+   },
+   // 主播电台
+   getRadioStationListRequest(){
+    return personalpersonalizedDjprogramizedMv({}).then(res => {
+      if(res.code === 200){
+       console.log(res,'mvList');
+       this.data.personality.radioStationList = res.result
+       this.setData({personality: this.data.personality })
+      }
+    })
    },
   /**
    * 生命周期函数--监听页面加载
@@ -54,7 +84,10 @@ Page({
    
     let b =  this.getBannerRequest();
     let p =  this.getPersonalizList();
-    Promise.all([b,p]).then(res => {
+    let n =  this.getNewSongRequest();
+    let m =  this.getMVListRequest();
+    let R=  this.getRadioStationListRequest();
+    Promise.all([b,p,n,m,R]).then(res => {
       
     })
   },

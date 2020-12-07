@@ -1,6 +1,6 @@
 <template name="personality">
   <!-- 轮播图 -->
-  <view>
+  <view class="banner">
     <swiper indicator-dots="true" autoplay="true" >
       <swiper-item  wx:for="{{personality.bannerList}}" wx:key="*this">
         <image src="{{item.imageUrl}}" width="750" height="290"></image>
@@ -53,7 +53,71 @@
           <view>
             <image class="i" src="{{item.picUrl}}"></image>
           </view>
-          <text>{{item.name}}</text>
+          <view class="play-text">{{item.name}}</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+  <!-- 最新音乐 -->
+  <view>
+    <view class="play-nav">
+      <view>
+        <image src="../../image/personality/new-music.png" width="30"></image>
+        <text>最新音乐</text>
+      </view>
+      <view class="play-more">更多>></view>
+    </view>
+    <view class="play-list">
+      <view class="play-item" wx:for="{{personality.newSongList}}"  wx:key="id">
+        <navigator>
+          <view>
+            <image class="i" src="{{item.picUrl}}"></image>
+          </view>
+          <view class="new-name">{{item.name}}</view>
+          <view class="name-art">{{item.song.artists[0].name}}</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <!-- 推荐mv -->
+  <view>
+    <view class="play-nav">
+      <view>
+        <image src="../../image/personality/new-music.png" width="30"></image>
+        <text>推荐mv</text>
+      </view>
+      <view class="play-more">更多>></view>
+    </view>
+    <view class="play-list">
+      <view class="play-item" wx:for="{{personality.mvList}}"  wx:key="id">
+        <navigator>
+          <view>
+            <image class="mv-i" src="{{item.picUrl}}"></image>
+          </view>
+          <view class="new-name">{{item.name}}</view>
+          <view class="name-art">{{item.artists[0].name}}</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <!-- 主播电台 -->
+  <view>
+    <view class="play-nav">
+      <view>
+        <image src="../../image/personality/play-list.png" width="30"></image>
+        <text>主播电台</text>
+      </view>
+      <view class="play-more">更多>></view>
+    </view>
+   
+    <view class="play-list">
+      <view class="play-item" wx:for="{{personality.radioStationList}}"  wx:key="id">
+        <navigator>
+          <view>
+            <image class="i" src="{{item.picUrl}}"></image>
+          </view>
+          <view class="play-text">{{item.name}}</view>
         </navigator>
       </view>
     </view>

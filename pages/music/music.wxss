@@ -1,11 +1,16 @@
 /* tab */
 .tab{
   font-size: 14px;
-  background-color: rgba(240,240,240,.8);
+  background-color: rgba(240,240,240,.9);
   height: 80rpx;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
 }
 .tab-item{
   height: 60rpx;
@@ -14,6 +19,9 @@
 .active {
   color: #BB2C08;
   border-bottom-color: #BB2C08;
+}
+.banner {
+  padding-top: 80rpx;
 }
 /* nav */
 .nav{
@@ -83,12 +91,37 @@
 .play-list-nav {
   /* flex: 1; */
   /* width: 33.33%; */
-  margin: 10rpx 10rpx 0 0;
+  margin: 10rpx 10rpx 10rpx 10rpx;
 }
 .play-text{
   overflow: hidden;
-  /* text-overflow: ellipsis; */
-  /* white-space: nowrap; */
+  text-overflow: ellipsis;
   font-size: 12px;
   width: 100%;
+  height: 80rpx;
+  margin-bottom: 25rpx;
+}
+.name-art{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 10px;
+  width: 100%;
+  height: 30rpx;
+  margin-bottom: 25rpx;
+  color: #b6b3b3;
+}
+.new-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  width: 100%;
+  height: 40rpx;
+}
+.mv-i {
+  width: 360rpx;
+  height: 200rpx;
+}
+/* 歌单 */
+.main {
+  padding-top: 80rpx;
 }
