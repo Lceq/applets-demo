@@ -1,5 +1,62 @@
 <template name="radio-station">
+  <!-- 轮播图 -->
+  <view class="banner">
+    <swiper indicator-dots="true" autoplay="true" >
+      <swiper-item  wx:for="{{radio.bannerList}}" wx:key="*this">
+        <image src="{{item.pic}}" width="750" height="290"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 推荐节目 -->
   <view>
-    radio station
+    <view class="pro-re-text">
+      <text class="p-t">精彩节目推荐</text>
+    </view>
+    <view wx:for="{{radio.programs}}" wx:key='*this'>
+      <navigator>
+        <view class="pro-main">
+          <image class="prp-i" src="{{item.coverUrl}}"></image>
+          <view class="pro-text">
+            <view class="o-h pro-name">{{item.name}}</view>
+            <view class="o-h pro-reason">{{item.reason}}</view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <!-- 精选电台 - 谈情说爱 -->
+  <view>
+    <view class="pro-re-text">
+      <text class="p-t">精选电台 - 谈情说爱</text>
+    </view>
+    <view class="play-list">
+      <view class="play-item" wx:for="{{radio.djRadios}}"  wx:key="id">
+        <navigator>
+          <view>
+            <image class="i" src="{{item.picUrl}}"></image>
+          </view>
+          <view class="play-text" style="height: 40rpx">{{item.name}}</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="pro-re-text">
+      <text class="p-t">热门电台</text>
+    </view>
+    <view class="play-list">
+      <view class="play-item" wx:for="{{radio.hotDjRadios}}"  wx:key="id">
+        <navigator style="height: 400rpx">
+          <view>
+            <image class="hot-dj-i" src="{{item.picUrl}}"></image>
+            <view class="cat-name">{{item.name}}</view>
+          </view>
+          <view class="hot-dj-num">
+            <image class="class-p" src="'../../image/personality/p0.png'"></image>
+            <text> {{item.subCount}}订阅</text>
+          </view>
+        </navigator>
+      </view>
+  </view>
   </view>
 </template>

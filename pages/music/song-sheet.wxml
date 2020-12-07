@@ -1,5 +1,25 @@
 <template name="song-sheet">
-  <view class="main">
-    song sheet
+  <view class="cat">
+     <view class="all">
+       <text>全部歌单</text>
+     </view>
+    <view class="select-cat">
+       选择分类
+    </view>
+  </view>
+  <view class="play-list">
+      <view class="play-item" wx:for="{{songSheet.playlists}}"  wx:key="id">
+        <navigator style="height: 300rpx">
+          <view>
+            <image class="mv-i" src="{{item.coverImgUrl}}"></image>
+          </view>
+          <view class="cat-name">{{item.name}}</view>
+          <view class="cat-art">{{item.creator.nickname }}</view>
+          <view class="cat-num">
+            <image class="class-p" src="'../../image/personality/p0.png'"></image>
+            <text> {{item.playCount}}</text>
+          </view>
+        </navigator>
+      </view>
   </view>
 </template>

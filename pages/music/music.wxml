@@ -21,5 +21,5 @@
 <import src="song-sheet.wxml"></import>
 <import src="radio-station.wxml"></import>
 <import src="ranking-list.wxml"></import>
-<template is="{{tabIs}}" data="{{personality: personality}}"/>
+<template is="{{tabIs}}" data="{{personality: personality,songSheet: songSheet,radio: radio}}"/>
 </view>
