@@ -111,7 +111,6 @@ Page({
      return playlistCatlist({}).then(res => {
        if(res.code === 200){
          this.data.songSheet.Catlist = res.sub
-        //  console.log(res,'/top/playlist playlistCatlist');
        }
      })
    },
@@ -196,7 +195,6 @@ Page({
          this.setData({
           ranking:  this.data.ranking
          })
-         console.log(res,this.data.ranking.singerList,'toplistDetail');
        }
      })
    },

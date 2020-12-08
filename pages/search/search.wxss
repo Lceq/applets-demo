@@ -1,0 +1,84 @@
+.form_input{flex: 1;position: relative;color: #fff;height: 60rpx;overflow: hidden}
+.form_input view{position: absolute;top: 0;z-index: 10;left: 0;padding:12rpx 15rpx  }
+/* .form_input .sf_clear{right: 0;left: auto} */
+.form-i{
+  width: 900rpx;
+  border: 1px solid #b6b6b6;
+  margin: 20rpx;
+  font-size: 12px;
+  position: relative;
+}
+.button button{ 
+  padding: 0 20rpx;
+  /* width:60rpx; */
+  height:60rpx;
+  border: none;
+  line-height: 60rpx;
+  display:block;
+  text-align: right;
+  font-size: 14px;
+  color: #b6b6b6;
+  /* background-color: #333333; */
+  width: 60rpx;
+  margin-top: 20rpx;
+  
+}
+.sf_clear{
+  /* background-color: #333333; */
+  padding:4rpx 15rpx;
+  position: absolute;
+  top: 4rpx;
+  right: 0rpx;
+  z-index: 5;
+}
+.tab{
+  font-size: 14px;
+  background-color: rgba(240,240,240,.9);
+  height: 80rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 80rpx;
+  z-index: 2;
+}
+.tab-item{
+  height: 60rpx;
+  border-bottom: 1px solid  rgba(240,240,240,.8);
+}
+.active {
+  color: #BB2C08;
+  border-bottom-color: #BB2C08;
+}
+.s-idx{
+  font-size: 16px;
+  color: #b6b6b6;
+  padding: 25rpx 25rpx;
+}
+.song{
+  /* background-color: #333333;  */
+  width: 100%;
+  border-bottom: 1px solid  #b6b6b6;
+  color: #2c2a2a;
+  font-size: 12px;
+  padding: 25rpx 0;
+}
+.s-i{
+  width: 20rpx;
+  height:  20rpx;
+}
+.tab-item-t{
+  padding-top: 60rpx
+}
+.s-i{
+  height: 40rpx;
+  width: 40rpx;;
+}
+.s-t{
+  border-bottom: 1px solid  #b6b6b6;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 14px;
+}

@@ -1,0 +1,74 @@
+<!--pages/search/search.wxml-->
+<view>
+  <form action="" bindsubmit="serachForm">
+    <view class="flex-between">
+      <view class="form-i form-input flex" >
+        <view>
+              <icon type="search" size="20" color="#aaa" />
+        </view>
+        <input type="text" auto-focus maxlength="20" name="name" bindinput="inputext" placeholder="搜索单曲、歌手、专辑等" value="{{value}}" />
+        <view class="sf_clear" hidden="{{!value}}" bindtap="clearInput">
+            <icon type="clear" size="16" color="#aaa" />
+        </view>
+      </view>
+      <view class="button flex-end">
+        <button style="width: 160rpx;" form-type="submit" plain="true"> 搜索 </button>
+      </view>
+    </view>
+  </form>
+  <!-- tabs -->
+  <view class="tab" wx:if="{{value && searchLoading}}">
+    <view wx:for="{{tabsList}}" class="tab-item {{tabType == item.type ?'active' : ''}}" bindtap="clickTabItem" data-type="{{item.type}}">
+      <text>{{item.name}}</text> 
+    </view>
+  </view>
+  <!-- 单曲 -->
+  <view style="padding-top: 60rpx" wx:if="{{tabType === 1 && searchLoading}}">
+    <view>
+      <navigator>
+        <view class="flex-between">
+          <view class="s-idx">
+            <text>1</text>
+          </view>
+          <view class="song flex-between">
+            <view>
+              <view>ddddddd</view>
+              <view>--</view>
+            </view>
+           <view>
+             <image class="s-i" src="'../../image/personality/new-music.png'"></image>
+           </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <!-- 歌手 -->
+  <view wx:if="{{tabType === 100}}">
+    歌手
+  </view>
+  <!-- 专辑 -->
+  <view wx:if="{{tabType === 10}}">
+    专辑
+  </view>
+  <!-- 歌单 -->
+  <view wx:if="{{tabType === 1000}}">
+    歌单
+  </view>
+  <!-- MV -->
+  <view wx:if="{{tabType === 1004}}">
+    MV
+  </view>
+  <!-- 主播电台 -->
+  <view wx:if="{{tabType === 1009}}">
+    主播电台
+  </view>
+  <!-- 用户 -->
+  <view wx:if="{{tabType === 1002}}">
+    用户
+  </view>
+   <!-- 历史搜索 -->
+   <view  wx:if="{{!searchLoading}}">
+     历史搜索
+   </view>
+</view>
