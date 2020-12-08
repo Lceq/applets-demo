@@ -1,3 +1,19 @@
+
+.flex-between{
+  display: flex;
+  justify-content: space-between;
+}
+.flex {
+  display: flex;
+}
+.flex-end{
+  display: flex;
+  justify-content: end;
+}
+.flex-start{
+  display: flex;
+  justify-content: st;
+}
 /**app.wxss**/
 .container {
   height: 100%;

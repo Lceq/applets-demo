@@ -238,3 +238,21 @@
   text-align: right;
   font-size: 10px;
 }
+.rabk-i{
+  width: 300rpx;
+  height: 180rpx;
+  /* margin-right: 15rpx;
+  margin-top: 8rpx;
+  margin-bottom: 8rpx; */
+  margin: 8rpx 15rpx ;
+}
+.rank-text{
+  border-bottom: 1px solid #b6b3b3;
+  font-size: 12px;
+  width: 100%;
+  padding: 15rpx 15rpx 15rpx 0;
+  margin: auto 0;
+}
+.rank-t-i{
+  padding: 9rpx;
+}

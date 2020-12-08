@@ -1,5 +1,42 @@
 <template name="ranking-list">
-  <view>
-    Ranking List
+  <!-- 云音乐官方榜 -->
+  <view class="banner">
+    <view style="" class="pro-re-text">
+      <text class="p-t">云音乐官方榜</text>
+    </view>
+    <view wx:for="{{ranking.officialList}}" wx:key="*this">
+      <navigator>
+        <view class="flex">  
+          <image class="rabk-i" src="{{item.coverImgUrl}}"></image>
+          <view class="rank-text" >
+            <view class="rank-t-i" wx:for-items="{{item.tracks}}"  wx:for-item='t' wx:for-index="idx">{{idx+1}}. {{t.first}}- {{t.second}} </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <view wx:for="{{ranking.singerList}}" wx:key="*this">
+      <navigator>
+        <view class="flex">  
+          <image class="rabk-i" src="{{item.coverUrl}}"></image>
+          <view class="rank-text" >
+            <view class="rank-t-i" wx:for-items="{{item.artists}}"  wx:for-item='t' wx:for-index="idx">{{idx+1}}. {{t.first}}- {{t.third}} </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <view style="" class="pro-re-text">
+      <text class="p-t">全球榜</text>
+    </view>
+    <view class="play-list">
+      <view class="play-item" wx:for="{{ranking.globalList}}"  wx:key="id">
+        <navigator>
+          <view>
+            <image class="i" src="{{item.coverImgUrl}}"></image>
+          </view>
+          <view class="play-text">{{item.name}}</view>
+        </navigator>
+      </view>
+    </view>
   </view>
+  
 </template>

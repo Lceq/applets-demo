@@ -27,8 +27,10 @@ Page({
     radio:{
       bannerList: [],
     },
-    toplist: {
-
+    ranking: {
+      officialList: [],
+      globalList: [],
+      singerList: [],
     }
   },
   clickTabItem(e){
@@ -162,7 +164,6 @@ Page({
          this.setData({
           radio: this.data.radio
         })
-         console.log(res,'djPersonalizeRecommend');
        }
      })
    },
@@ -189,7 +190,13 @@ Page({
    getTopListRequest(){
      return toplistDetail({}).then(res => {
        if(res.code === 200){
-         console.log(res,'toplistDetail');
+         this.data.ranking.officialList = res.list.filter(x => x.ToplistType)
+         this.data.ranking.singerList = [res.artistToplist]
+         this.data.ranking.globalList = res.list.filter(x => !x.ToplistType)
+         this.setData({
+          ranking:  this.data.ranking
+         })
+         console.log(res,this.data.ranking.singerList,'toplistDetail');
        }
      })
    },
