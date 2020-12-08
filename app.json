@@ -18,10 +18,14 @@
     "borderStyle": "black",
     "backgroundColor": "#212121",
     "list": [{
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/music/music",
         "iconPath": "image/tab-img/tab_default.png",
         "selectedIconPath": "image/tab-img/tab_active.png",
-        "text": "发现音2乐"
+        "text": "发现音乐"
+      },
+      {
+        "pagePath": "pages/weather/weather",
+        "text": "天气查询"
       }
 
     ]
