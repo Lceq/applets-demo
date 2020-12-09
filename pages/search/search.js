@@ -2,7 +2,7 @@
 const {
   search,
   tabsList
-} = require('../../api/search')
+} = require('../../api/search');
 Page({
 
   /**
@@ -24,7 +24,7 @@ Page({
   },
 
   serachForm: function (e) {
-    this.serachRequest()
+    this.searchRequest()
     this.setData({
       searchLoading: true
     })
@@ -51,7 +51,7 @@ Page({
        })
        wx.setStorageSync('recent', this.data.recent)
   },
-  serachRequest() {
+  searchRequest() {
     //songsList: [],// 单曲
     //artistsList: [],// 歌手
     //albumsList: [],//专辑
@@ -114,8 +114,8 @@ Page({
     let type = e.currentTarget.dataset.type
     this.setData({
       tabType: type
-    })
-    this.serachRequest()
+    });
+    this.searchRequest()
 
   },
   /**

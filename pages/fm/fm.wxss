@@ -1,0 +1,8 @@
+#coverbg{position: absolute;left: 0;bottom:0;width:750rpx;height:1334rpx;z-index:-2;display:block}
+
+.record{
+    /* background-color: rgba(78, 68, 68, 0.5); */
+    height: 500rpx;
+    width: 500rpx;
+    margin: 60rpx 130rpx;
+}

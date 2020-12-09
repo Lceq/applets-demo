@@ -2,7 +2,9 @@
   "pages": [
     "pages/music/music",
     "pages/weather/weather",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/fm/fm",
+    "pages/new-music/new"
   ],
   "window": {
     "backgroundTextStyle": "light",

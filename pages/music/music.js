@@ -19,6 +19,7 @@ Page({
       newSongList: [],
       mvList: [],
       radioStationList: [],
+      thisday: (new Date()).getDate(),
     },
     songSheet:{
       playlists: [],
@@ -32,6 +33,22 @@ Page({
       globalList: [],
       singerList: [],
     }
+  },
+  // 更多推荐歌单
+  songMore(){
+    this.setData({tabIs: 'song-sheet'})
+    this.setData({tabIndex: 1})
+    this.getSongSheetRequest()
+  },
+  moreMusic(){
+    wx.navigateTo({
+      url: '../new-music/new',
+    })
+  },
+  moreRedio(){
+    this.setData({tabIndex: 2})
+    this.setData({tabIs: 'radio-station'})
+    this.getRadioStationRequest()
   },
   clickTabItem(e){
     this.setData({tabIndex: e.currentTarget.dataset.t})

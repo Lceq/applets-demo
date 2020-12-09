@@ -11,7 +11,7 @@
   <view>
     <view class="nav">
       <view>
-        <navigator url="../weather/weather">
+        <navigator url="../fm/fm">
         <view class="nav-item">
           <image src="../../image/fm/fm-nav.png"></image>
          </view>
@@ -21,7 +21,7 @@
       <view>
         <navigator url="../weather/weather">
           <view class="nav-item">
-            <view class="days"> 4</view>
+            <view class="days"> {{personality.thisday}}</view>
           </view>
           每日歌曲推荐
         </navigator>
@@ -44,7 +44,7 @@
         <image src="../../image/personality/play-list.png" width="30"></image>
         <text>推荐歌单</text>
       </view>
-      <view class="play-more">更多>></view>
+      <view bindtap="songMore" class="play-more">更多>></view>
     </view>
    
     <view class="play-list">
@@ -66,7 +66,7 @@
         <image src="../../image/personality/new-music.png" width="30"></image>
         <text>最新音乐</text>
       </view>
-      <view class="play-more">更多>></view>
+      <view bindtap="moreMusic" class="play-more">更多>></view>
     </view>
     <view class="play-list">
       <view class="play-item" wx:for="{{personality.newSongList}}"   wx:key="*this">
@@ -108,7 +108,7 @@
         <image src="../../image/personality/play-list.png" width="30"></image>
         <text>主播电台</text>
       </view>
-      <view class="play-more">更多>></view>
+      <view bindtap="moreRedio" class="play-more">更多>></view>
     </view>
    
     <view class="play-list">

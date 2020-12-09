@@ -1,0 +1,8 @@
+<!-- 私人FM -->
+<view>
+  <image id="coverbg"  src="../../image/fm/fm-bgc.jpg" />
+  <image class="record" src="../../image/fm/record.png"></image>
+  <view class="b">
+    
+  </view>
+</view>
