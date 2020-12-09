@@ -1,6 +1,6 @@
 const {request} = require('../utils/bsurl.js');
 module.exports ={
-  search:(data) =>{ return request('/search/suggest',data)},//搜索
+  search:(data) =>{ return request('/search',data)},//搜索
   tabsList: [
     {type:1,name:"单曲",relist:[],klass:'songs', offset:0, limit:20},
     {type:100,name:"歌手", relist:[],klass:'artis', offset:0,limit:20},

@@ -22,83 +22,129 @@
       <text>{{item.name}}</text> 
     </view>
   </view>
-  <!-- 单曲 -->
-  <view class="tab-item-t" wx:if="{{tabType === 1 && searchLoading}}">
-    <view>
-      <navigator>
-        <view class="flex-between">
-          <view class="s-idx">
-            <text>1</text>
-          </view>
-          <view class="song flex-between">
-            <view>
-              <view>ddddddd</view>
-              <view>--</view>
+  <view>
+    <!-- 单曲 -->
+    <view class="tab-item-t" wx:if="{{tabType === 1 && searchLoading}}">
+      <view wx:for="{{songsList}}" wx:key="id" wx:for-item="items">
+        <navigator url="">
+          <view class="flex-between">
+            <view class="s-idx">
+              <text>{{index+1}}</text>
             </view>
-           <view>
-             <!-- <image class="s-i" src="'../../image/personality/new-music.png'"></image> -->
-           </view>
+            <view class="song flex-between">
+              <view>
+                <view>{{items.name}}</view>
+                <view style="color: #b6b3b3;margin-top: 5rpx">{{items.artists[0].name}}</view>
+              </view>
+            <view>
+              <image class="ss-i" src="../../image/radio.png"></image>
+            </view>
+            </view>
           </view>
+        </navigator>
+      </view>
+    </view>
+    <!-- 歌手 -->
+    <view class="tab-item-t" wx:if="{{tabType === 100 && searchLoading}}">
+      <view wx:for="{{artistsList}}" wx:key="id">
+        <navigator>
+          <view class="flex" style="margin-top: 5rpx">
+            <image class="s-i" src="{{item.img1v1Url}}"></image>
+            <view class="s-t">
+            {{item.name}}
+            </view>
+          </view>
+        </navigator>
+      </view>
+      
+    </view>
+    <!-- 专辑 -->
+    <view class="tab-item-t"  wx:if="{{tabType === 10 && searchLoading}}">
+      <view wx:for="{{albumsList}}" wx:key="id">
+        <navigator>
+          <view class="flex" style="margin-top: 5rpx">
+            <image class="s-i" src="{{item.picUrl}}"></image>
+            <view class="pro-text">
+                <view class="o-h pro-name">{{item.name}}</view>
+                <view class="o-h pro-reason">{{item.artists[0].name}}</view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <!-- 歌单 -->
+    <view class="tab-item-t" wx:if="{{tabType === 1000 && searchLoading}}">
+      <view wx:for="{{playlists}}" wx:key="id">
+        <navigator>
+          <view class="flex" style="margin-top: 5rpx">
+            <image class="s-i" src="{{item.coverImgUrl}}"></image>
+            <view class="pro-text">
+                <view class="o-h pro-name">{{item.name}}</view>
+                <view class="o-h pro-reason">{{item.trackCount}}首，{{item.creator.nickname}}，播放{{item.playCount}}次</view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <!-- MV -->
+    <view class="tab-item-t" wx:if="{{tabType === 1004 && searchLoading}}">
+      <view class="play-list">
+        <view class="play-item" wx:for="{{mvsList}}" wx:key="id">
+          <navigator style="height: 300rpx">
+            <view>
+              <image class="mv-i" src="{{item.cover}}"></image>
+            </view>
+            <view class="">
+                <view class="o-h pro-name">{{item.name}}</view>
+                <view class="o-h pro-reason">{{item.artistName}}</view>
+            </view>
+            <!-- <view class="cat-num">
+              <image class="class-p" src="../../image/personality/p0.png"></image>
+              <text>{{item.playCount}}</text>
+            </view> -->
+          </navigator>
         </view>
-      </navigator>
+    </view>
+    </view>
+    <!-- 主播电台 -->
+    <view class="tab-item-t" wx:if="{{tabType === 1009 && searchLoading}}">
+      <view wx:for="{{djRadiosList}}" wx:key="id">
+        <navigator>
+          <view class="flex" style="margin-top: 5rpx">
+            <image class="s-i" src="{{item.picUrl}}"></image>
+            <view class="pro-text">
+                <view class="o-h pro-name">{{item.name}}</view>
+                <view class="o-h pro-reason">{{item.dj.nickname}}</view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <!-- 用户 -->
+    <view class="tab-item-t" wx:if="{{tabType === 1002 && searchLoading}}">
+      <view wx:for="{{userprofilesList}}" wx:key="id">
+        <navigator>
+          <view class="flex" style="margin-top: 5rpx">
+            <image class="s-u" src="{{item.avatarUrl}}"></image>
+            <view class="pro-text">
+                <view class="o-h pro-name">{{item.nickname}}</view>
+                <view class="o-h pro-reason">{{item.signature}}</view>
+            </view>
+          </view>
+        </navigator>
+      </view>
     </view>
   </view>
-  <!-- 歌手 -->
-  <view class="tab-item-t" wx:if="{{tabType === 100}}">
-    <view>
-      <navigator>
-        <view class="flex" style="margin-top: 5rpx">
-          <image class="s-i" src="../../image/demo.jpg"></image>
-          <view class="s-t">
-          sss
-          </view>
-        </view>
-      </navigator>
-    </view>
-    
-  </view>
-  <!-- 专辑 -->
-  <view class="tab-item-t"  wx:if="{{tabType === 10}}">
-    <view>
-      <navigator>
-        <view class="flex" style="margin-top: 5rpx">
-          <image class="s-i" src="../../image/demo.jpg"></image>
-          <view class="pro-text">
-              <view class="o-h pro-name">ddddddd</view>
-              <view class="o-h pro-reason">sss</view>
-          </view>
-        </view>
-      </navigator>
-    </view>
-  </view>
-  <!-- 歌单 -->
-  <view class="tab-item-t" wx:if="{{tabType === 1000}}">
-    <view>
-      <navigator>
-        <view class="flex" style="margin-top: 5rpx">
-          <image class="s-i" src="../../image/demo.jpg"></image>
-          <view class="pro-text">
-              <view class="o-h pro-name">ddddddd</view>
-              <view class="o-h pro-reason">sss</view>
-          </view>
-        </view>
-      </navigator>
-    </view>
-  </view>
-  <!-- MV -->
-  <view wx:if="{{tabType === 1004}}">
-    MV
-  </view>
-  <!-- 主播电台 -->
-  <view wx:if="{{tabType === 1009}}">
-    主播电台
-  </view>
-  <!-- 用户 -->
-  <view wx:if="{{tabType === 1002}}">
-    用户
-  </view>
+ 
    <!-- 历史搜索 -->
-   <view  wx:if="{{!searchLoading}}">
-     历史搜索
+   <view class="history"  wx:if="{{!searchLoading}}">
+     <view class="his" wx:if="{{recent.length}}">历史搜索</view>
+     <view class="h-a" wx:for="{{recent}}">
+      <icon type="waiting_circle" size="22" color="#ddd"></icon>
+      <view class="flex-between h-c" >
+        <text>{{item}}</text>
+        <image bindtap="deleteHis" data-index="{{index}}" class="h-i" src="../../image/close.png"></image>
+      </view>
+     </view>
    </view>
 </view>
