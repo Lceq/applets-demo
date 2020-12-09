@@ -48,7 +48,7 @@
     </view>
    
     <view class="play-list">
-      <view class="play-item" wx:for="{{personality.personalizList}}"  wx:key="id">
+      <view class="play-item" wx:for="{{personality.personalizList}}"  wx:key="*this">
         <navigator>
           <view>
             <image class="i" src="{{item.picUrl}}"></image>
@@ -69,7 +69,7 @@
       <view class="play-more">更多>></view>
     </view>
     <view class="play-list">
-      <view class="play-item" wx:for="{{personality.newSongList}}"  wx:key="id">
+      <view class="play-item" wx:for="{{personality.newSongList}}"   wx:key="*this">
         <navigator>
           <view>
             <image class="i" src="{{item.picUrl}}"></image>
@@ -90,7 +90,7 @@
       <view class="play-more">更多>></view>
     </view>
     <view class="play-list">
-      <view class="play-item" wx:for="{{personality.mvList}}"  wx:key="id">
+      <view class="play-item" wx:for="{{personality.mvList}}"   wx:key="*this">
         <navigator>
           <view>
             <image class="mv-i" src="{{item.picUrl}}"></image>
@@ -112,7 +112,7 @@
     </view>
    
     <view class="play-list">
-      <view class="play-item" wx:for="{{personality.radioStationList}}"  wx:key="id">
+      <view class="play-item" wx:for="{{personality.radioStationList}}"   wx:key="*this">
         <navigator>
           <view>
             <image class="i" src="{{item.picUrl}}"></image>

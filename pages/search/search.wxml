@@ -18,12 +18,12 @@
   </form>
   <!-- tabs -->
   <view class="tab" wx:if="{{value && searchLoading}}">
-    <view wx:for="{{tabsList}}" class="tab-item {{tabType == item.type ?'active' : ''}}" bindtap="clickTabItem" data-type="{{item.type}}">
+    <view wx:for="{{tabsList}}" wx:key="*this" class="tab-item {{tabType == item.type ?'active' : ''}}" bindtap="clickTabItem" data-type="{{item.type}}">
       <text>{{item.name}}</text> 
     </view>
   </view>
   <!-- 单曲 -->
-  <view style="padding-top: 60rpx" wx:if="{{tabType === 1 && searchLoading}}">
+  <view class="tab-item-t" wx:if="{{tabType === 1 && searchLoading}}">
     <view>
       <navigator>
         <view class="flex-between">
@@ -36,7 +36,7 @@
               <view>--</view>
             </view>
            <view>
-             <image class="s-i" src="'../../image/personality/new-music.png'"></image>
+             <!-- <image class="s-i" src="'../../image/personality/new-music.png'"></image> -->
            </view>
           </view>
         </view>
@@ -44,16 +44,46 @@
     </view>
   </view>
   <!-- 歌手 -->
-  <view wx:if="{{tabType === 100}}">
-    歌手
+  <view class="tab-item-t" wx:if="{{tabType === 100}}">
+    <view>
+      <navigator>
+        <view class="flex" style="margin-top: 5rpx">
+          <image class="s-i" src="../../image/demo.jpg"></image>
+          <view class="s-t">
+          sss
+          </view>
+        </view>
+      </navigator>
+    </view>
+    
   </view>
   <!-- 专辑 -->
-  <view wx:if="{{tabType === 10}}">
-    专辑
+  <view class="tab-item-t"  wx:if="{{tabType === 10}}">
+    <view>
+      <navigator>
+        <view class="flex" style="margin-top: 5rpx">
+          <image class="s-i" src="../../image/demo.jpg"></image>
+          <view class="pro-text">
+              <view class="o-h pro-name">ddddddd</view>
+              <view class="o-h pro-reason">sss</view>
+          </view>
+        </view>
+      </navigator>
+    </view>
   </view>
   <!-- 歌单 -->
-  <view wx:if="{{tabType === 1000}}">
-    歌单
+  <view class="tab-item-t" wx:if="{{tabType === 1000}}">
+    <view>
+      <navigator>
+        <view class="flex" style="margin-top: 5rpx">
+          <image class="s-i" src="../../image/demo.jpg"></image>
+          <view class="pro-text">
+              <view class="o-h pro-name">ddddddd</view>
+              <view class="o-h pro-reason">sss</view>
+          </view>
+        </view>
+      </navigator>
+    </view>
   </view>
   <!-- MV -->
   <view wx:if="{{tabType === 1004}}">

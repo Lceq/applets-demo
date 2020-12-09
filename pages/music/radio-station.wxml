@@ -30,7 +30,7 @@
       <text class="p-t">精选电台 - 谈情说爱</text>
     </view>
     <view class="play-list">
-      <view class="play-item" wx:for="{{radio.djRadios}}"  wx:key="id">
+      <view class="play-item" wx:for="{{radio.djRadios}}"   wx:key="*this">
         <navigator>
           <view>
             <image class="i" src="{{item.picUrl}}"></image>
@@ -45,7 +45,7 @@
       <text class="p-t">热门电台</text>
     </view>
     <view class="play-list">
-      <view class="play-item" wx:for="{{radio.hotDjRadios}}"  wx:key="id">
+      <view class="play-item" wx:for="{{radio.hotDjRadios}}"  wx:key="*this">
         <navigator style="height: 400rpx">
           <view>
             <image class="hot-dj-i" src="{{item.picUrl}}"></image>

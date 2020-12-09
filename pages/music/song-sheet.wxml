@@ -8,7 +8,7 @@
     </view>
   </view>
   <view class="play-list">
-      <view class="play-item" wx:for="{{songSheet.playlists}}"  wx:key="id">
+      <view class="play-item" wx:for="{{songSheet.playlists}}"  wx:key="*this">
         <navigator style="height: 300rpx">
           <view>
             <image class="mv-i" src="{{item.coverImgUrl}}"></image>

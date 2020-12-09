@@ -35,7 +35,7 @@
   "compileType": "miniprogram",
   "libVersion": "2.14.1",
   "appid": "wx72ccdac8e81de23c",
-  "projectname": "applets-demo",
+  "projectname": "demo",
   "debugOptions": {
     "hidedInDevtools": []
   },
