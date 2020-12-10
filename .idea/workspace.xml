@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1639f872-e75f-4cd1-abab-c87231ec4db4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/image/fm/fm-bgc.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/music/music.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/music/music.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/music/personality.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/music/personality.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/search/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/search/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/search/search.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/search/search.json" afterDir="false" />
-    </list>
+    <list default="true" id="1639f872-e75f-4cd1-abab-c87231ec4db4" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -22,12 +15,13 @@
     <session id="554460467">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -112,7 +106,7 @@
         <entry file="file://$PROJECT_DIR$/pages/fm/fm.wxss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="19">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -198,8 +192,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="WxProject" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -247,11 +241,12 @@
       <workItem from="1607505039735" duration="604000" />
       <workItem from="1607505652275" duration="1899000" />
       <workItem from="1607508471503" duration="605000" />
+      <workItem from="1607563477963" duration="597000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5191000" />
+    <option name="totallyTimeSpent" value="5788000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="258" y="44" width="1308" height="1000" extended-state="0" />
@@ -322,7 +317,7 @@
     <entry file="file://$PROJECT_DIR$/pages/fm/fm.wxss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>

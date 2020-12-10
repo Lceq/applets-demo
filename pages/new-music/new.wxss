@@ -1,0 +1,83 @@
+.new-tab{
+  background-color: #BB2C08;
+  display: flex;
+  justify-content: center;
+  padding : 20rpx;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+.new-item{
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+  border: 1rpx solid #fff;
+  padding: 10rpx 58rpx;
+}
+.new-active{
+  background-color: #fff;
+  color: #BB2C08;
+}
+
+.s-idx{
+  margin-right: 15rpx;
+  margin-left: 15rpx;
+}
+.song{
+  /* background-color: #333333;  */
+  width: 100%;
+  color: #2c2a2a;
+  font-size: 14px;
+}
+
+.ss-i{
+  width: 55rpx;
+  height: 55rpx;
+  /* margin: auto 0; */
+}
+.new-m-i{
+  border-bottom: 1px solid  #e1e2e3;
+  padding: 15rpx 15rpx 0 0rpx;
+}
+.new-m{
+  padding-top: 80rpx;
+}
+.new-m-image{
+  height: 128px;
+  width: 100%;
+  padding-top: 97rpx;
+}
+.new-a{
+  padding-top: 170rpx;
+  display: flex;
+  flex-flow: wrap;
+}
+.new-i{
+   padding: 15rpx 5rpx 10rpx 20rpx;
+   position: relative;
+   
+}
+.new-a-bgc{
+  width: 340rpx;
+  height: 340rpx;
+ 
+}
+.a-name{
+  font-size: 28rpx;
+  width: 42%;
+  overflow: hidden;
+  height: 40rpx;
+}
+.a-pic{
+  width: 289rpx;
+    height: 340rpx;
+    position: absolute;
+    top: 5px;
+}
+.a-artist{
+  color: #888;
+  font-size: 24rpx;
+  width: 42%;
+  overflow: hidden;
+  height: 40rpx;
+}

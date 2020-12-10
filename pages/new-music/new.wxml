@@ -1,3 +1,59 @@
 <view>
-  music
+  <view>
+    <view class="new-tab">
+      <view class="flex">
+        <view bindtap="onClickNewTab" data-newIdx="0" class="new-item {{newIdx ==0 ? 'new-active' : ''}}">新歌</view>
+        <view bindtap="onClickNewTab" data-newIdx="1" class="new-item  {{newIdx ==1 ? 'new-active' : ''}}">新碟</view>
+      </view>
+    </view>
+  </view>
+  <!-- 新歌 -->
+  <view wx:if="{{newIdx ==0}}">
+    <view class="tabs" style="top: 95rpx;" >
+      <view  wx:for="{{song}}" wx:key="type" class="tabs-item {{tabIndex == item.idx ?'tabs-active' : ''}}" bindtap="clickTabItem" data-t="{{item.idx}}">
+          <text>{{item.name}}</text> 
+      </view>
+    </view>
+    <view class="new-m" wx:for="{{song}}" wx:key="type" hidden="{{tabIndex!=(index)}}">
+      <!-- {{item.image}} -->
+      <image class="new-m-image" src="../../image/new-music/{{item.image}}.jpg"></image>
+      <view class="new-m-i" wx:for-items="{{item.songList}}" wx:for-item="s" wx:for-index="idx" wx:key="idx">
+        <navigator url="">
+          <view class="flex-between ">
+            <view class="s-idx">
+              <image class="i-width-80" src="{{s.album.picUrl}}"></image>
+            </view>
+            <view class="song flex-between">
+              <view>
+                <view>{{s.name}}</view>
+                <view style="color: #b6b3b3;margin-top: 5rpx;font-size: 10px;">{{s.artists[0].name}}</view>
+              </view>
+            <view style="margin:auto 0" wx:if="{{s.mvid}}">
+              <image class="ss-i" src="../../image/radio.png"></image>
+            </view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{newIdx ==1}}">
+    <view class="tabs" style="top: 95rpx;" >
+      <view  wx:for="{{album}}" wx:key="type" class="tabs-item {{tabAIndex == item.idx ?'tabs-active' : ''}}" bindtap="clickATabItem" data-t="{{item.idx}}">
+          <text>{{item.name}}</text> 
+      </view>
+    </view>
+    <view class="new-a" wx:for="{{album}}" wx:key="area" hidden="{{tabAIndex!=(index)}}">
+      <view class="new-a-i" wx:for-items="{{item.albumList}}" wx:for-item="a" wx:for-index="idx" wx:key="idx">
+        <navigator url="">
+          <view class="new-i">
+            <image class="new-a-bgc" src="../../image/new-music/a82.png"></image>
+            <view class="a-name">{{a.name}}</view>
+            <view class="a-artist">{{a.artist.name}}</view>
+            <image class="a-pic" src="{{a.picUrl}}"></image>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
 </view>

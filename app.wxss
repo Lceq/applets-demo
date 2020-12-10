@@ -14,6 +14,36 @@
   display: flex;
   justify-content: st;
 }
+.i-width-120{
+  width: 120rpx;
+  height: 120rpx;
+}
+.i-width-80{
+  width: 80rpx;
+  height: 80rpx;
+}
+/* tab */
+.tabs{
+  font-size: 14px;
+  background-color: rgba(240,240,240,.9);
+  height: 80rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  left: 20;
+  top: 0;
+  z-index: 2;
+}
+.tabs-item{
+  height: 60rpx;
+  border-bottom: 1px solid  rgba(240,240,240,.8);
+}
+.tabs-active {
+  color: #BB2C08;
+  border-bottom-color: #BB2C08;
+}
 /**app.wxss**/
 .container {
   height: 100%;
