@@ -19,7 +19,7 @@
       </navigator>
       </view>
       <view>
-        <navigator url="../weather/weather">
+        <navigator url="../everyday-recommend/everyday">
           <view class="nav-item">
             <view class="days"> {{personality.thisday}}</view>
           </view>

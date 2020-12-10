@@ -4,7 +4,8 @@
     "pages/weather/weather",
     "pages/search/search",
     "pages/fm/fm",
-    "pages/new-music/new"
+    "pages/new-music/new",
+    "pages/everyday-recommend/everyday"
   ],
   "window": {
     "backgroundTextStyle": "light",
