@@ -8,4 +8,6 @@ module.exports ={
   personalizedMv:(data) =>{ return request('personalized/mv',data)},// 推荐mv
   personalpersonalizedDjprogramizedMv:(data) =>{ return request('personalized/djprogram',data)},// 主播电台
   playlistDetail:(data) =>{ return request('playlist/detail',data)},// 获取歌单详情
+  userDetail:(data) =>{ return request('user/detail',data)},// 获取用户详情
+  userPlaylist:(data) =>{ return request('user/playlist',data)},// 获取用户歌单
 }

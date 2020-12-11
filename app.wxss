@@ -1,14 +1,25 @@
-
+.margin-left-10{
+  margin-left: 10rpx;
+}
+.margin-botton-10{
+  margin-bottom: 20rpx;
+}
 .flex-between{
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .flex-around{
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 .flex {
   display: flex;
+}
+.flex-align-center {
+  display: flex;
+  align-items: center;
 }
 .flex-end{
   display: flex;

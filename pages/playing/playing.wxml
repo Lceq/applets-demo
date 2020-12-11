@@ -1,5 +1,6 @@
 <view class="play-header" wx:for="{{playlist}}" wx:key="id">
   <image class="play-bgc" src="{{item.coverImgUrl}}"></image>
+  <view class="play-bgca"></view>
   <view class="play-main flex">
     <image class="p-m-i" src="{{item.coverImgUrl}}"></image>
     <view class="playcount">
@@ -9,9 +10,9 @@
     </view>
     <view class="play-text">
       <text class="text-title">{{item.name}}</text>
-      <view class="flex">
+      <view class="flex" bindtap="userplaylist" data-userid="{{item.creator.userId}}">
         <image class="i-width-80" style="border-radius: 50%;" src="{{item.creator.avatarUrl}}"></image>
-        <view class="text-w">网易云音乐 ></view>
+        <view class="text-w">{{item.creator.nickname}} ></view>
       </view>
     </view>
   </view>
@@ -42,7 +43,7 @@
         <text class="song-length">({{item.tracks.length}}首)</text>
       </view>
     </view>
-    <view wx:for="{{item.tracks}}" wx:for-item="items" wx:for-index="idx">
+    <view wx:for="{{item.tracks}}"  wx:for-item="items" wx:for-index="idx" wx:key="idx">
       <navigator url="">
         <view class="flex-between">
           <view class="s-idx">

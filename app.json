@@ -6,7 +6,8 @@
     "pages/fm/fm",
     "pages/new-music/new",
     "pages/everyday-recommend/everyday",
-    "pages/playing/playing"
+    "pages/playing/playing",
+    "pages/user/user"
   ],
   "window": {
     "backgroundTextStyle": "light",

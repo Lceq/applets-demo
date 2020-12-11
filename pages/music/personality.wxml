@@ -49,7 +49,7 @@
    
     <view class="play-list">
       <view class="play-item" wx:for="{{personality.personalizList}}"  wx:key="*this">
-        <navigator>
+        <navigator url="../playing/playing?id={{item.id}}">
           <view>
             <image class="i" src="{{item.picUrl}}"></image>
           </view>
