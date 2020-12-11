@@ -7,4 +7,5 @@ module.exports ={
   personalizedNewsong:(data) =>{ return request('personalized/newsong',data)},// 最新音乐
   personalizedMv:(data) =>{ return request('personalized/mv',data)},// 推荐mv
   personalpersonalizedDjprogramizedMv:(data) =>{ return request('personalized/djprogram',data)},// 主播电台
+  playlistDetail:(data) =>{ return request('playlist/detail',data)},// 获取歌单详情
 }

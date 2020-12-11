@@ -5,12 +5,13 @@
     "pages/search/search",
     "pages/fm/fm",
     "pages/new-music/new",
-    "pages/everyday-recommend/everyday"
+    "pages/everyday-recommend/everyday",
+    "pages/playing/playing"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#BB2C08",
-    "navigationBarTitleText": "m",
+    "navigationBarTitleText": "Music",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",

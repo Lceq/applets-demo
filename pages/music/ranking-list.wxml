@@ -5,7 +5,7 @@
       <text class="p-t">云音乐官方榜</text>
     </view>
     <view wx:for="{{ranking.officialList}}" wx:key="*this">
-      <navigator>
+      <navigator url="../playing/playing?id={{item.id}}">
         <view class="flex">  
           <image class="rabk-i" src="{{item.coverImgUrl}}"></image>
           <view class="rank-text" >

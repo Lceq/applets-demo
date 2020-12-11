@@ -27,7 +27,7 @@
         </navigator>
       </view>
       <view>
-        <navigator url="../weather/weather">
+        <navigator url="../playing/playing?id=3778678">
           <view class="nav-item">
             <image src="../../image/personality/hot-nav.png"></image>
           </view>
@@ -47,7 +47,7 @@
       <view bindtap="songMore" class="play-more">更多>></view>
     </view>
    
-    <!-- <view class="play-list">
+    <view class="play-list">
       <view class="play-item" wx:for="{{personality.personalizList}}"  wx:key="*this">
         <navigator>
           <view>
@@ -56,7 +56,7 @@
           <view class="play-text">{{item.name}}</view>
         </navigator>
       </view>
-    </view> -->
+    </view>
   </view>
 
   <!-- 最新音乐 -->

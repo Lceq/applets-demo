@@ -3,6 +3,10 @@
   display: flex;
   justify-content: space-between;
 }
+.flex-around{
+  display: flex;
+  justify-content: space-around;
+}
 .flex {
   display: flex;
 }
@@ -21,6 +25,19 @@
 .i-width-80{
   width: 80rpx;
   height: 80rpx;
+}
+.i-width-50{
+  width: 50rpx;
+  height: 50rpx;
+}
+.i-width-40{
+  width: 40rpx;
+  height: 40rpx;
+}
+.i-width-25{
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 10rpx;
 }
 /* tab */
 .tabs{
