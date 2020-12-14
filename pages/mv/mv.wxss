@@ -1,0 +1,113 @@
+/* pages/mv/mv.wxss */
+.mv-tabs{
+  margin-top: 400rpx;
+}
+.item-detail{
+  padding-top: 66rpx;
+}
+.info{
+  font-size: 28rpx;
+  color: #666;
+  padding: 24rpx;
+  border-bottom: 1px solid #eee;
+}
+.info view{
+  padding: 5rpx 0;
+}
+.info-name{
+  font-size: 34rpx;
+  white-space: 2rpx;
+  color: #000;
+  padding-bottom: 16rpx;
+  display: block;
+  margin-bottom: 10rpx;
+}
+.fx-time{
+  padding: 24rpx;
+  font-size: 28rpx;
+  color: #949597;
+}
+.sm-title{
+  padding: 0 20rpx;
+  font-size: 24rpx;
+  display: block;
+  color: #6a6a6a;
+  background-color: #eeeff0;
+  line-height: 60rpx;
+}
+.sm-list{
+  padding: 20rpx 0 0 20rpx;
+}
+.sm-image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.sm-mian{
+  border-bottom: 1rpx solid #e1e2e3;
+  margin-left: 20rpx;
+  width: 650rpx;
+  font-size: 28rpx;
+  padding: 0 20rpx 15rpx 0;
+  line-height: 48rpx;
+}
+.sm-name{
+  font-size: 28rpx;
+  color: #333;
+  display: block;
+  height: 30rpx;
+}
+.sm-time{
+  font-size: 22rpx;
+  display: block;
+  color: #9999;
+}
+.sm-cgI{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 10rpx;
+  vertical-align: sub;
+}
+.simi{
+  padding-left: 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-self: start;
+  position: relative;
+}
+.simi-item{
+  margin: 10rpx 10rpx 10rpx 0rpx;
+  /* flex: 1; */
+  width: 31.333%;
+}
+.simi-image{
+  width: 239rpx;
+  height: 130rpx;
+}
+.simi-count-i{
+  width: 23rpx;
+  height: 23rpx;
+}
+.simi-count{
+  position: absolute; 
+  top: 34px;
+  left: 54px;
+  font-size: 20rpx;
+  color: #fff;
+  /* background-color: #333333; */
+}
+.simi-name{
+  width: 239rpx;
+  height: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 26rpx;
+}
+.simi-artist{
+  color: #888;
+  font-size: 24rpx;
+  width: 239rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

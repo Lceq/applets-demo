@@ -1,0 +1,76 @@
+<!--pages/mv/mv.wxml-->
+<video 
+      id="myVideo" 
+      src="{{mvUrl}}" 
+      binderror="videoErrorCallback" 
+      danmu-list="{{danmuList}}" 
+      show-play-btn="{{true}}" 
+      show-fullscreen-btn="{{false}}" 
+      controls
+      picture-in-picture-mode="{{['push', 'pop']}}"
+      bindenterpictureinpicture='bindVideoEnterPictureInPicture'
+      bindleavepictureinpicture='bindVideoLeavePictureInPicture'
+      style="width:100%;height: 400rpx"
+></video>
+<view class="tabs mv-tabs">
+   <view class="tabs-item {{tabIndex == 0 ?'tabs-active' : ''}}" bindtap="clickTabItem" data-idx="0">
+      <text>详情</text> 
+   </view>
+   <view class="tabs-item {{tabIndex == 1 ?'tabs-active' : ''}}" bindtap="clickTabItem" data-idx="1"> 
+      <text>评论  {{comments.total}} </text>
+   </view>
+   <view class="tabs-item {{tabIndex == 2 ?'tabs-active' : ''}}" bindtap="clickTabItem" data-idx="2">
+      <text>相关Mv</text>
+   </view>
+</view>
+<!-- 详情 -->
+<view class="item-detail" wx:if="{{tabIndex == 0}}">
+   <view class="info">
+     <view class="info-name">{{mvDetail.name}}</view>
+     <view>
+       <navigator >歌手：{{mvDetail.artistName}}</navigator>
+     </view>
+     <view>播放：{{mvDetail.playCount}}</view>
+   </view>
+   <view class="fx-time">
+    发行：{{mvDetail.publishTime}}
+   </view>
+</view>
+<!-- 评论 -->
+<view class="item-detail" wx:if="{{tabIndex == 1}}">
+  <view class="sm-title">精彩评论（{{comments.total}}）</view>
+  <view class="flex-align-center sm-list" wx:for="{{comments.comments}}" wx:key="id">
+    <image class="sm-image" src="{{item.user.avatarUrl}}"></image>
+    <view class="sm-mian">
+      <view class="flex-between">
+        <view>
+          <text class="sm-name">{{item.user.nickname}}</text>
+          <text class="sm-time">{{item.time}}</text>
+        </view>
+        <view>
+          <text>{{item.likedCount}}</text>
+          <image class="sm-cgI" src="../../image/xg.png"></image>
+        </view>
+      </view>
+      <view>{{item.content}}</view>
+    </view>
+
+  </view>
+</view>
+<!-- 相关Mv -->
+<view class="item-detail simi" wx:if="{{tabIndex == 2}}">
+  <view class="simi-item" wx:for="{{simi}}" wx:key="id">
+    <navigator url="../mv/mv?mvid={{item.id}}">
+      <view>
+        <image class="simi-image" src="{{item.cover}}"></image>
+        <view class="simi-count">
+          <image class="simi-count-i" src="../../image/video.png"></image>
+          {{item.playCount}}
+        </view>
+        <view class="simi-name">{{item.name}}</view>
+        <view class="simi-artist">{{item.artistName}}</view>
+      </view>
+    </navigator>
+    
+  </view>
+</view>

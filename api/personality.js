@@ -10,4 +10,8 @@ module.exports ={
   playlistDetail:(data) =>{ return request('playlist/detail',data)},// 获取歌单详情
   userDetail:(data) =>{ return request('user/detail',data)},// 获取用户详情
   userPlaylist:(data) =>{ return request('user/playlist',data)},// 获取用户歌单
+  mvDetail:(data) =>{ return request('mv/detail',data)},// 获取 mv 数据
+  mvUrl:(data) =>{ return request('mv/url',data)},// mv 地址
+  commentMv:(data) =>{ return request('comment/mv',data)},// mv 评论
+  simiMv:(data) =>{ return request('simi/mv',data)},// 相似 mv
 }

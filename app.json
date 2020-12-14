@@ -7,7 +7,8 @@
     "pages/new-music/new",
     "pages/everyday-recommend/everyday",
     "pages/playing/playing",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/mv/mv"
   ],
   "window": {
     "backgroundTextStyle": "light",
