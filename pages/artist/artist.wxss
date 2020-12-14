@@ -1,0 +1,162 @@
+/* pages/artist/artist.wxss */
+.artist-bgi{
+  width: 100%;
+  height: 540rpx;
+}
+.artist-tabs{
+  position: absolute;
+  top: 196px;
+}
+.hot-list{
+  /* padding-top: 50rpx; */
+}
+.s-idx{
+  font-size: 16px;
+  color: #b6b6b6;
+  padding: 25rpx 25rpx;
+}
+.song{
+  /* background-color: #333333;  */
+  width: 100%;
+  border-bottom: 1px solid  #b6b6b6;
+  color: #2c2a2a;
+  font-size: 12px;
+  padding: 10rpx 0;
+}
+.s-i{
+  height: 110rpx;
+  width: 120rpx;
+  margin: 5rpx 15rpx;
+}
+.s-t{
+  border-bottom: 1px solid  #b6b6b6;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 13px;
+  width: 100%;
+  padding: 35rpx 0;
+}
+
+.pro-text{
+  border-bottom: 1rpx solid #e1e2e3;
+  /* padding: 15rpx; */
+  width: 100%;
+  padding-top: 15rpx;
+}
+.o-h {
+  overflow: hidden;
+  height: 40rpx;
+  text-overflow: ellipsis;
+}
+.pro-reason {
+  font-size: 24rpx;
+  color: #b6b3b3;
+  padding-top: 10rpx;
+}
+.pro-name{
+  font-size: 13px;
+  overflow: hidden;
+  width: 360rpx;
+}
+
+.play-item {
+  flex: 1;
+}
+.play-text{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  width: 95%;
+  height: 80rpx;
+  margin-bottom: 25rpx;
+}
+.name-art{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 10px;
+  width: 100%;
+  height: 30rpx;
+  margin-bottom: 25rpx;
+  color: #b6b3b3;
+}
+.new-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  width: 100%;
+  height: 40rpx;
+}
+.mv-i {
+  width: 360rpx;
+  height: 200rpx;
+}
+.pro-re-text {
+  font-size: 14px;
+  border-left: 2px solid #BB2C08;
+  margin: 20rpx;
+}
+.p-t {
+  padding-left: 15rpx;
+}
+.artist_des {
+  padding: 5rpx 15rpx;
+  font-size: 28rpx;
+  color: #999;
+  line-height: 1.5;
+  display: block;
+}
+.text-ov{
+  width: 600rpx;
+  height: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mv-list{
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 10rpx;
+}
+.simi-item{
+  margin: 10rpx 10rpx 10rpx 0rpx;
+  /* flex: 1; */
+  width: 31.333%;
+}
+.simi-image{
+  width: 239rpx;
+  height: 210rpx;
+}
+.simi-count-i{
+  width: 23rpx;
+  height: 23rpx;
+}
+.simi-count{
+  position: absolute; 
+  top: 34px;
+  left: 54px;
+  font-size: 20rpx;
+  color: #fff;
+  /* background-color: #333333; */
+}
+.simi-name{
+  width: 239rpx;
+  height: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 26rpx;
+}
+.simi-artist{
+  color: #888;
+  font-size: 24rpx;
+  width: 239rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.simi-list{
+  padding-left: 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-self: start;
+  position: relative;
+}

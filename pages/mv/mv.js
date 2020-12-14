@@ -43,7 +43,6 @@ Page({
         this.setData({
           mvUrl:res.data.url
         })
-        console.log(res);
       }
     })
   },

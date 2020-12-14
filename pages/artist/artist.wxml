@@ -1,0 +1,99 @@
+<!--pages/artist/artist.wxml-->
+<view class="artist-header">
+  <image class="artist-bgi" src="{{artist.cover}}"></image>
+</view>
+<view class="tabs artist-tabs">
+   <view class="tabs-item {{tabIndex == 0 ?'tabs-active' : ''}}" bindtap="clickTabItem" data-idx="0">
+      <text>热门50</text> 
+   </view>
+   <view class="tabs-item {{tabIndex == 1 ?'tabs-active' : ''}}" bindtap="clickTabItem" data-idx="1"> 
+      <text>专辑 </text>
+   </view>
+   <view class="tabs-item {{tabIndex == 2 ?'tabs-active' : ''}}" bindtap="clickTabItem" data-idx="2">
+      <text>Mv</text>
+   </view>
+   <view class="tabs-item {{tabIndex == 3 ?'tabs-active' : ''}}" bindtap="clickTabItem" data-idx="3">
+      <text>歌手信息</text>
+   </view>
+</view>
+<view class="hot-list" wx:if="{{tabIndex == 0}}">
+  <view wx:for="{{hotSongsList}}" wx:key="id">
+    <navigator url="">
+      <view class="flex-between">
+        <view class="s-idx">
+          <text>{{index+1}}</text>
+        </view>
+        <view class="song flex-between">
+          <view>
+            <view class="text-ov">{{item.name}}</view>
+            <view class="text-ov" style="color: #b6b3b3;margin-top: 5rpx">{{artist.name}}-{{item.al.name}}</view>
+          </view>
+        <view style="margin: auto 0" wx-if="{{item.mv!=0}}">
+          <image class="i-width-80" src="../../image/radio.png"></image>
+        </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>
+<view wx:if="{{tabIndex == 1}}">
+  <view wx:for="{{artistAlbums.hotAlbums}}" wx:key="id"> 
+    <navigator>
+      <view class="flex" style="margin-top: 5rpx">
+        <image class="s-i" src="{{item.picUrl}}"></image>
+        <view class="pro-text">
+            <view class="o-h pro-name">{{item.name}}</view>
+            <view class="o-h pro-reason">{{item.artist.name}} ({{artistAlbums.artist.alias}})</view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>
+<view wx:if="{{tabIndex == 2}}" class="mv-list">
+  <view class="play-item" wx:for="{{artistMvList}}" wx:key="id">
+    <navigator url="../mv/mv">
+      <!-- <view> -->
+        <image class="mv-i" src="{{item.imgurl16v9}}"></image>
+      <!-- </view> -->
+      <view style="width: 360rpx" class="new-name text-ov">{{item.name}}</view>
+      <view style="width: 360rpx" class="name-art text-ov">{{item.artistName}}</view>
+    </navigator>
+  </view>
+</view>
+<view wx:if="{{tabIndex == 3}}">
+  <!-- <view class="pro-re-text">
+    <text class="p-t">歌手简介</text>
+  </view>
+  <view class="artist_des">
+    {{artistDesc.briefDesc}}
+  </view>
+  <view wx:for="{{artistDesc.introduction}}" wx:key="index"> 
+    <view class="pro-re-text">
+    <text class="p-t">{{item.ti}}</text>
+    </view>
+    <view class="artist_des">
+      <text>{{item.txt}}</text>
+    </view>
+  </view> -->
+  <view> 
+    <view class="pro-re-text">
+       <text class="p-t">相似歌手</text>
+    </view>
+    <view class="simi-list">
+      <view class="simi-item" wx:for="{{simi}}" wx:key="id">
+        <navigator url="../mv/mv?mvid={{item.id}}">
+          <view>
+            <image class="simi-image" src="{{item.picUrl}}"></image>
+            <view class="simi-count">
+              <image class="simi-count-i" src="../../image/video.png"></image>
+              {{item.playCount}}
+            </view>
+            <view class="simi-name">{{item.name}}</view>
+            <view class="simi-artist">{{item.artistName}}</view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    
+  </view>
+</view>

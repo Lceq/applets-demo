@@ -27,8 +27,8 @@
 <view class="item-detail" wx:if="{{tabIndex == 0}}">
    <view class="info">
      <view class="info-name">{{mvDetail.name}}</view>
-     <view>
-       <navigator >歌手：{{mvDetail.artistName}}</navigator>
+     <view style="color: #537fb0">
+       <navigator url="../artist/artist?id={{mvDetail.artistId}}">歌手：{{mvDetail.artistName}}</navigator>
      </view>
      <view>播放：{{mvDetail.playCount}}</view>
    </view>
@@ -71,6 +71,5 @@
         <view class="simi-artist">{{item.artistName}}</view>
       </view>
     </navigator>
-    
   </view>
 </view>
