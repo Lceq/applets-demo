@@ -1,0 +1,40 @@
+<!--pages/djradio/djradio.wxml-->
+<view class="dj-header">
+  <image class="dj-bgi" src="{{djDetail.picUrl}}"></image>
+  <view class="h-text flex-between">
+    <view class="t-name">{{djDetail.name}}</view>
+    <view class="t-count">
+      <image class="t-image" src="../../image/subscribe.png"></image>
+      <text>订阅 （{{djDetail.subCount}}）</text>
+    </view>
+  </view>
+</view>
+<view >
+  <view class=" artist flex-align-center">
+    <image class="artist-image" src="{{djDetail.dj.avatarUrl}}"></image>
+    <text class="artist-text"> {{djDetail.dj.nickname}}</text>
+  </view>
+  <view class="info">
+    <text class="tags">{{djDetail.category}}</text>
+    {{djDetail.desc}}
+  </view>
+</view>
+<view class="title">
+  共{{djDetail.programCount}}期
+</view>
+<view class="list">
+  <view class="list-item" wx:for="{{programs}}" wx:key="id">
+    <navigator>
+      <view class="flex-align-center">
+        <view class="idx">{{index+1}}</view>
+        <view class="flex-between i-info">
+          <view class="i-main">
+            <view class="main-name">{{item.name}}</view>
+            <view class="relistdes">{{item.createTime}}-  {{item.likedCount}}- {{item.listenerCount}}</view>
+          </view>
+          <view class="i-act">{{item.duration}}</view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>

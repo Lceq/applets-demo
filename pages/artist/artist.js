@@ -66,7 +66,6 @@ Page({
         this.setData({
           simi: res.artists
         })
-        console.log(res,'相似');
       }
     })
   },

@@ -11,7 +11,9 @@
     "pages/mv/mv",
     "pages/artist/artist",
     "pages/song/song",
-    "pages/album/album"
+    "pages/album/album",
+    "pages/program/program",
+    "pages/djradio/djradio"
   ],
   "window": {
     "backgroundTextStyle": "light",

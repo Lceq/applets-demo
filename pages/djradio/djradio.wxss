@@ -1,0 +1,114 @@
+/* pages/djradio/djradio.wxss */
+.dj-header{
+  position: relative;
+  height: 540rpx;
+  overflow: hidden;
+}
+.dj-bgi{
+  width: 100%;
+  height: 750rpx;
+  position: absolute;
+  left: 0;
+  top: -105rpx;
+  z-index: -2;
+}
+.h-text {
+  position: absolute;
+    top: 190px;
+    left: 0;
+    right: 0;
+    padding: 20rpx;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+}
+.t-name{
+  font-size: 33rpx;
+}
+.t-count{
+  border: 1rpx solid #fff;
+    padding: 10rpx 30rpx;
+    float: right;
+    font-size: 28rpx;
+    border-radius: 3em;
+    background: rgba(0,0,0,.2);
+}
+.t-image{
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 10rpx;
+
+}
+.artist{
+  padding: 30rpx ;
+}
+.artist-image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.artist-text{
+  font-size: 28rpx;
+}
+.info{
+  padding: 20rpx;
+  font-size: 28rpx;
+  border-top: 1rpx solid #eee;
+}
+.tags{
+  border: 1rpx solid #BB2C08;
+  color: #BB2C08;
+  font-size: 20rpx;
+  line-height: 1;
+  margin-right: 10rpx;
+  padding: 3rpx 8rpx;
+}
+.title{
+  padding: 0 20rpx;
+  font-size: 24rpx;
+  display: block;
+  color: #6a6a6a;
+  background-color: #eeeff0;
+  line-height: 60rpx;
+}
+.list-item{
+  width: 100%;
+}
+.idx{
+  font-size: 30rpx;
+  color: #999;
+  text-align: center;
+  flex: 0 0 80rpx;
+}
+.i-info{
+  width: 100%;
+  padding: 10rpx 10rpx 10rpx 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-bottom: 1rpx solid #e1e2e3;
+}
+.i-main{
+  word-break: keep-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.6;
+  width: 80%;
+  word-wrap: break-word;
+}
+.main-name{
+  font-size: 30rpx;
+  color: #373838;
+}
+.relistdes{
+  color: #999;
+  font-size: 24rpx;
+  white-space: -2rpx;
+}
+.i-act{
+  text-align: right;
+    font-size: 24rpx;
+    color: #999;
+    /* display: flex; */
+}

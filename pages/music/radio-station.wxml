@@ -13,7 +13,7 @@
       <text class="p-t">精彩节目推荐</text>
     </view>
     <view wx:for="{{radio.programs}}" wx:key='*this'>
-      <navigator>
+      <navigator url="../program/program">
         <view class="pro-main">
           <image class="prp-i" src="{{item.coverUrl}}"></image>
           <view class="pro-text">
@@ -31,7 +31,7 @@
     </view>
     <view class="play-list">
       <view class="play-item" wx:for="{{radio.djRadios}}"   wx:key="*this">
-        <navigator>
+        <navigator url="../djradio/djradio?id={{item.id}}">
           <view>
             <image class="i" src="{{item.picUrl}}"></image>
           </view>
@@ -46,7 +46,7 @@
     </view>
     <view class="play-list">
       <view class="play-item" wx:for="{{radio.hotDjRadios}}"  wx:key="*this">
-        <navigator style="height: 400rpx">
+        <navigator style="height: 400rpx" url="../djradio/djradio?id={{item.id}}">
           <view>
             <image class="hot-dj-i" src="{{item.picUrl}}"></image>
             <view class="cat-name">{{item.name}}</view>

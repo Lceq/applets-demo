@@ -113,7 +113,7 @@
    
     <view class="play-list">
       <view class="play-item" wx:for="{{personality.radioStationList}}"   wx:key="*this">
-        <navigator>
+        <navigator url="../program/program">
           <view>
             <image class="i" src="{{item.picUrl}}"></image>
           </view>
