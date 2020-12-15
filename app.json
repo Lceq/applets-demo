@@ -9,7 +9,9 @@
     "pages/playing/playing",
     "pages/user/user",
     "pages/mv/mv",
-    "pages/artist/artist"
+    "pages/artist/artist",
+    "pages/song/song",
+    "pages/album/album"
   ],
   "window": {
     "backgroundTextStyle": "light",

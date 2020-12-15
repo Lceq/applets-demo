@@ -18,7 +18,7 @@
 </view>
 <view class="hot-list" wx:if="{{tabIndex == 0}}">
   <view wx:for="{{hotSongsList}}" wx:key="id">
-    <navigator url="">
+    <navigator url="../song/song">
       <view class="flex-between">
         <view class="s-idx">
           <text>{{index+1}}</text>
@@ -29,7 +29,9 @@
             <view class="text-ov" style="color: #b6b3b3;margin-top: 5rpx">{{artist.name}}-{{item.al.name}}</view>
           </view>
         <view style="margin: auto 0" wx-if="{{item.mv!=0}}">
-          <image class="i-width-80" src="../../image/radio.png"></image>
+          <navigator url="../mv/mv?mvid={{item.mv}}">
+            <image class="i-width-80" src="../../image/radio.png"></image>
+          </navigator>
         </view>
         </view>
       </view>
@@ -38,7 +40,7 @@
 </view>
 <view wx:if="{{tabIndex == 1}}">
   <view wx:for="{{artistAlbums.hotAlbums}}" wx:key="id"> 
-    <navigator>
+    <navigator url="../album/album?id={{item.id}}">
       <view class="flex" style="margin-top: 5rpx">
         <image class="s-i" src="{{item.picUrl}}"></image>
         <view class="pro-text">
@@ -51,7 +53,7 @@
 </view>
 <view wx:if="{{tabIndex == 2}}" class="mv-list">
   <view class="play-item" wx:for="{{artistMvList}}" wx:key="id">
-    <navigator url="../mv/mv">
+    <navigator url="../mv/mv?mvid={{item.id}}">
       <!-- <view> -->
         <image class="mv-i" src="{{item.imgurl16v9}}"></image>
       <!-- </view> -->
@@ -61,7 +63,7 @@
   </view>
 </view>
 <view wx:if="{{tabIndex == 3}}">
-  <!-- <view class="pro-re-text">
+  <view class="pro-re-text">
     <text class="p-t">歌手简介</text>
   </view>
   <view class="artist_des">
@@ -74,14 +76,14 @@
     <view class="artist_des">
       <text>{{item.txt}}</text>
     </view>
-  </view> -->
+  </view>
   <view> 
     <view class="pro-re-text">
        <text class="p-t">相似歌手</text>
     </view>
     <view class="simi-list">
       <view class="simi-item" wx:for="{{simi}}" wx:key="id">
-        <navigator url="../mv/mv?mvid={{item.id}}">
+        <navigator url="artist?id={{item.id}}">
           <view>
             <image class="simi-image" src="{{item.picUrl}}"></image>
             <view class="simi-count">
@@ -94,6 +96,5 @@
         </navigator>
       </view>
     </view>
-    
   </view>
 </view>

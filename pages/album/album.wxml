@@ -1,0 +1,64 @@
+<!--pages/album/album.wxml-->
+<view class="play-header">
+  <image class="play-bgc" src="{{album.album.picUrl}}"></image>
+  <view class="play-bgca"></view>
+  <view class="play-main flex">
+    <view>
+      <image class="p-m-a" src="../../image/new-music/a82.png"></image>
+    <image class="p-m-i" src="{{album.album.picUrl}}"></image>
+    </view>
+    <view class="play-text">
+      <text class="text-title">{{album.album.name}}</text>
+      <text class="text-time">歌手： {{album.album.artists[0].name}}</text>
+      <text class="text-time">发布时间：2020-10-12</text>
+    </view>
+  </view>
+  <view style="padding: 10rpx 0" class="flex-around">
+  <view class="nav-item">
+    <image class="nav-item-image" src="../../image/file.png"></image>
+     <view style="text-align:center">收藏</view>
+  </view>
+  <view class="nav-item">
+    <image class="nav-item-image" src="../../image/comment.png"></image>
+     <view style="text-align:center">{{album.albuminfo.commentCount||'评论'}}</view>
+  </view>
+  <view class="nav-item">
+    <image class="nav-item-image" src="../../image/forward.png"></image>
+    <view style="text-align:center">{{album.album.info.shareCount||'分享'}}</view>
+  </view>
+</view>
+</view>
+
+<view class="nav-song" >
+  <view>
+    <view class="flex"> 
+      <view class="play">
+        <image class="i-width-40" src="../../image/pl-playall.png"></image>
+      </view>
+      <view class="po">
+        <text>播放全部</text>
+        <text class="song-length"> ({{album.songs.length}}首) </text>
+      </view>
+    </view>
+    <view wx:for="{{album.songs}}" wx:key="id">
+      <navigator url="../song/song">
+        <view class="flex-between">
+          <view class="s-idx">
+            <text>{{index+1}}</text>
+          </view>
+          <view class="song flex-between">
+            <view>
+              <view class="song-name">{{item.name}}</view>
+              <view class="song-ar" style="color: #999;margin-top: 5rpx">{{item.ar[0].name}}</view>
+            </view>
+          <view style="margin: auto 0" wx:if="{{item.mv != 0}}">
+            <navigator url="../mv/mv?mvid={{item.mv}}">
+              <image class="i-width-80" src="../../image/radio.png"></image>
+            </navigator>
+          </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>
