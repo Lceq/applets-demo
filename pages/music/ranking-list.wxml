@@ -5,8 +5,8 @@
       <text class="p-t">云音乐官方榜</text>
     </view>
     <view wx:for="{{ranking.officialList}}" wx:key="*this">
-      <navigator url="../playing/playing?id={{item.id}}">
-        <view class="flex">  
+      <navigator url="../playlist/playlist?id={{item.id}}">
+        <view class="flex">
           <image class="rabk-i" src="{{item.coverImgUrl}}"></image>
           <view class="rank-text" >
             <view class="rank-t-i" wx:for-items="{{item.tracks}}" wx:key="*this"  wx:for-item='t' wx:for-index="idx">{{idx+1}}. {{t.first}}- {{t.second}} </view>
@@ -16,7 +16,7 @@
     </view>
     <view wx:for="{{ranking.singerList}}" wx:key="*this">
       <navigator>
-        <view class="flex">  
+        <view class="flex">
           <image class="rabk-i" src="{{item.coverUrl}}"></image>
           <view class="rank-text" >
             <view class="rank-t-i" wx:for-items="{{item.artists}}" wx:key="*this"  wx:for-item='t' wx:for-index="idx">{{idx+1}}. {{t.first}}- {{t.third}} </view>
@@ -38,5 +38,5 @@
       </view>
     </view>
   </view>
-  
+
 </template>

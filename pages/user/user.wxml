@@ -41,7 +41,7 @@
   </view>
 
   <view wx:for="{{list1}}" wx:key="index">
-    <navigator url="../playing/playing?id={{item.id}}">
+    <navigator url="../playlist/playlist?id={{item.id}}">
       <view class="pro-main">
         <image class="prp-i" src="{{item.coverImgUrl}}"></image>
         <view class="pro-text">

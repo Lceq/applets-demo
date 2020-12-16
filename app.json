@@ -6,15 +6,17 @@
     "pages/fm/fm",
     "pages/new-music/new",
     "pages/everyday-recommend/everyday",
-    "pages/playing/playing",
+    "pages/playlist/playlist",
     "pages/user/user",
     "pages/mv/mv",
     "pages/artist/artist",
     "pages/song/song",
     "pages/album/album",
     "pages/program/program",
-    "pages/djradio/djradio"
+    "pages/djradio/djradio",
+    "pages/playing/playing"
   ],
+  "requiredBackgroundModes": ["audio", "location"],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#BB2C08",
@@ -40,5 +42,6 @@
       }
 
     ]
-  }
+  },
+  "expo": {}
 }

@@ -1,0 +1,50 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="CheckTagEmptyBody" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="CssInvalidPropertyValue" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="11">
+            <item index="0" class="java.lang.String" itemvalue="style" />
+            <item index="1" class="java.lang.String" itemvalue="class" />
+            <item index="2" class="java.lang.String" itemvalue="bindtap" />
+            <item index="3" class="java.lang.String" itemvalue="wx:for-item" />
+            <item index="4" class="java.lang.String" itemvalue="wx:for-index" />
+            <item index="5" class="java.lang.String" itemvalue="wx:for" />
+            <item index="6" class="java.lang.String" itemvalue="wx:key" />
+            <item index="7" class="java.lang.String" itemvalue="src" />
+            <item index="8" class="java.lang.String" itemvalue="wx:if" />
+            <item index="9" class="java.lang.String" itemvalue="wx:for-items" />
+            <item index="10" class="java.lang.String" itemvalue="name" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="11">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="view" />
+            <item index="7" class="java.lang.String" itemvalue="text" />
+            <item index="8" class="java.lang.String" itemvalue="image" />
+            <item index="9" class="java.lang.String" itemvalue="navigator" />
+            <item index="10" class="java.lang.String" itemvalue="icon" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="UnterminatedStatementJS" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="ignoreSemicolonAtEndOfBlock" value="true" />
+    </inspection_tool>
+  </profile>
+</component>

@@ -1,65 +1,90 @@
-<view class="play-header" wx:for="{{playlist}}" wx:key="id">
-  <image class="play-bgc" src="{{item.coverImgUrl}}"></image>
-  <view class="play-bgca"></view>
-  <view class="play-main flex">
-    <image class="p-m-i" src="{{item.coverImgUrl}}"></image>
-    <view class="playcount">
-      <image class="i-width-25" src="../../image/personality/p0.png"></image>
-      <text class="">{{item.playCount}} </text>
-      <image class="i-width-50 infor" src="../../image/infor.png"></image>
-    </view>
-    <view class="play-text">
-      <text class="text-title">{{item.name}}</text>
-      <view class="flex" bindtap="userplaylist" data-userid="{{item.creator.userId}}">
-        <image class="i-width-80" style="border-radius: 50%;" src="{{item.creator.avatarUrl}}"></image>
-        <view class="text-w">{{item.creator.nickname}} ></view>
-      </view>
-    </view>
+<!--pages/playing/playing.wxml-->
+<view id="playingpage" class=" {{playing?'playing':''}}"> 
+  <image class="bgi-image" src="../../image/demo.jpg"></image>
+  <view class="playing-zz">
+    <image src="../../image/aag.png" />
   </view>
-</view>
-<view class="flex-around" wx:for="{{playlist}}" wx:key="id">
-  <view class="nav-item">
-    <image class="nav-item-image" src="../../image/file.png"></image>
-     <view style="text-align:center">{{item.subscribedCount}}</view>
+  <view id="playing-main">
+    <image class="playingmainbg" src="../../image/play.png" />
+    <image src="../../image/demo.jpg" class="pmaincover" />
   </view>
-  <view class="nav-item">
-    <image class="nav-item-image" src="../../image/comment.png"></image>
-     <view style="text-align:center">{{item.commentCount}}</view>
-  </view>
-  <view class="nav-item">
-    <image class="nav-item-image" src="../../image/forward.png"></image>
-    <view style="text-align:center">{{item.shareCount}}</view>
-     
-  </view>
-</view>
-<view class="nav-song" >
-  <view wx:for="{{playlist}}" wx:key="id" >
-    <view class="flex"> 
-      <view class="play">
-        <image class="i-width-40" src="../../image/pl-playall.png"></image>
-      </view>
-      <view class="po">
-        <text>播放全部</text>
-        <text class="song-length">({{item.tracks.length}}首)</text>
-      </view>
-    </view>
-    <view wx:for="{{item.tracks}}"  wx:for-item="items" wx:for-index="idx" wx:key="idx">
-      <navigator url="">
-        <view class="flex-between">
-          <view class="s-idx">
-            <text>{{idx+1}}</text>
-          </view>
-          <view class="song flex-between">
-            <view>
-              <view>{{items.name}}</view>
-              <view style="color: #b6b3b3;margin-top: 5rpx">{{items.ar[0].name}}-{{items.name}}</view>
-            </view>
-          <view style="margin: auto 0" wx-if="{{items.mv!=0}}">
-            <image class="i-width-80" src="../../image/radio.png"></image>
-          </view>
-          </view>
+  <view class="playing-actwrap">
+    <view class="playing-info">
+      <view class="pi-act">
+          <image src="../../image/cm2_play_icn_love@2x.png" wx:if="{{!music.st}}" />
+          <image src="../../image/cm2_play_icn_loved@2x.png" wx:if="{{music.st}}" />
         </view>
-      </navigator>
+        <view class="pi-act">
+          <image src="../../image/cm2_play_icn_dld@2x.png" />
+        </view>
+        <view class="pi-act commentscount">
+          <navigator>
+            <image src="../../image/comment.png" />
+            <!-- <text >1111</text> -->
+          </navigator>
+        </view>
+        <view class="pi-act" bindtap="onClickMore">
+          <image src="../../image/cm2_play_icn_more@2x.png" />
+        </view>
     </view>
+    <!-- 进度条 -->
+    <view class="progress">
+      <text>00:00</text>
+      <progress activeColor="#BB2C08" percent="40" color="#dadada" stroke-width="2"></progress>
+      <text>03:00</text>
+    </view>
+    <view class="playingaction">
+      <!-- 循环方式 -->
+      <view class="pa-saction" bindtap="onClickShuffle" hidden="{{shuffle==1 ? false : true}}" data-s="2">
+        <image src="../../image/cm2_icn_loop@2x.png" />
+      </view>
+      <view class="pa-saction" bindtap="onClickShuffle" hidden="{{shuffle==2 ? false : true}}" data-s="3">
+        <image src="../../image/cm2_icn_one@2x.png" />
+      </view>
+      <view class="pa-saction" bindtap="onClickShuffle" hidden="{{shuffle==3 ? false : true}}" data-s="1">
+        <image src="../../image/cm2_icn_shuffle@2x.png" />
+      </view>
+      <!-- 向前 -->
+      <view class="pa-saction" data-other="-1">
+        <image src="../../image/ajh.png" />
+      </view>
+      <!-- 播放/暂停 -->
+      <view class="pa-saction" bindtap="onClickPlay" hidden="{{!playing}}" data-p="1">
+        <image id='pa-playing' src="../../image/ajd.png" />
+      </view>
+      <view class="pa-saction"  bindtap="onClickPlay" hidden="{{playing}}" data-p="2">
+        <image id='pa-pause' src="../../image/ajf.png" />
+      </view>
+      <!-- 向后 -->
+      <view class="pa-saction" data-other="1">
+        <image src="../../image/ajb.png" />
+      </view>
+      <!-- 列表 -->
+      <view class="pa-saction">
+        <image src="../../image/cm2_icn_list@2x.png" />
+      </view>
+    </view>
+  </view>
+</view>
+<!-- more -->
+<view bindtap="onClickShow" class="showM" hidden="{{isShowM}}"></view>
+<view class="more" hidden="{{isMore}}">
+  <view class="more-header">源于还</view>
+  <view class="flex-align-center more-item">
+    <image class="more-i" src="../../image/cm2_lay_icn_fav_new@2x.png"></image>
+    <view class="cmain">收藏到歌单</view>
+  </view>
+  <view class="flex-align-center more-item">
+    <image class="more-i" src="../../image/cm2_lay_icn_similar_new@2x.png"></image>
+    <view class="cmain">相似推荐</view>
+  </view>
+  <view class="flex-align-center more-item">
+    <image class="more-i" src="../../image/cm2_lay_icn_artist_new@2x.png"></image>
+    <view class="cmain">歌手：Kiki</view>
+  </view>
+  <view class="flex-align-center more-item">
+    <!-- <navigator></navigator> -->
+    <image class="more-i" src="../../image/personality/new-music.png"></image>
+    <view class="cmain">专辑：云与海</view>
   </view>
 </view>

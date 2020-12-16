@@ -27,7 +27,7 @@
         </navigator>
       </view>
       <view>
-        <navigator url="../playing/playing?id=3778678">
+        <navigator url="../playlist/playlist?id=3778678">
           <view class="nav-item">
             <image src="../../image/personality/hot-nav.png"></image>
           </view>
@@ -46,10 +46,10 @@
       </view>
       <view bindtap="songMore" class="play-more">更多>></view>
     </view>
-   
+
     <view class="play-list">
       <view class="play-item" wx:for="{{personality.personalizList}}"  wx:key="*this">
-        <navigator url="../playing/playing?id={{item.id}}">
+        <navigator url="../playlist/playlist?id={{item.id}}">
           <view>
             <image class="i" src="{{item.picUrl}}"></image>
           </view>
@@ -110,7 +110,7 @@
       </view>
       <view bindtap="moreRedio" class="play-more">更多>></view>
     </view>
-   
+
     <view class="play-list">
       <view class="play-item" wx:for="{{personality.radioStationList}}"   wx:key="*this">
         <navigator url="../program/program">
