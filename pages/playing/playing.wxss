@@ -124,3 +124,32 @@
     overflow: hidden;
     padding: 20rpx;
 }
+.percent{
+  position: absolute;
+  left: 117rpx;
+  width: 520rpx;
+  height: 30rpx;
+  /* background-color: rgb(223, 221, 221); */
+}
+#percent-color{
+  background-color: #3014ad;
+  position: absolute;
+  top: 19rpx;
+  z-index: 22;
+  height: 2px;
+  width: 10%;
+}
+#circle{
+  color: #BB2C08;
+  background-color: #fff;
+  border-radius: 50%;
+  font-size: 60rpx;
+  font-weight: 700;
+  width: 36rpx;
+  height: 36rpx;
+  text-align: center;
+  line-height: 7rpx;
+  position: absolute;
+  left: 0%;
+  z-index: 22;
+}

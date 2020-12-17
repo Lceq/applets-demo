@@ -1,12 +1,13 @@
 <!--pages/playing/playing.wxml-->
 <view id="playingpage" class=" {{playing?'playing':''}}"> 
-  <image class="bgi-image" src="../../image/demo.jpg"></image>
+  <image class="bgi-image" wx:if="!songs.songs"  src="../../image/default.jpg"></image>
+  <image class="bgi-image" wx:for="{{songs.songs}}" wx:key="index" src="{{item.al.picUrl}}"></image>
   <view class="playing-zz">
     <image src="../../image/aag.png" />
   </view>
   <view id="playing-main">
     <image class="playingmainbg" src="../../image/play.png" />
-    <image src="../../image/demo.jpg" class="pmaincover" />
+    <image wx:for="{{songs.songs}}" wx:key="index" src="{{item.al.picUrl}}" class="pmaincover" />
   </view>
   <view class="playing-actwrap">
     <view class="playing-info">
@@ -29,9 +30,15 @@
     </view>
     <!-- 进度条 -->
     <view class="progress">
-      <text>00:00</text>
-      <progress activeColor="#BB2C08" percent="40" color="#dadada" stroke-width="2"></progress>
-      <text>03:00</text>
+      <text>{{currentPosition}}</text>
+      <view class="percent">
+        <!-- <view id="circle" style="left: {{percent}}%">.</view> -->
+        <!-- <view id="percent-color" style="width: {{percent}}%"></view> -->
+        <slider block-size="12" style="margin:0;width:521rpx; position: absolute;z-index: 22;" activeColor="#BB2C08" bindchange="onClickSlider" left-icon="cancel" value="{{percent}}"/>
+      </view>
+      <progress activeColor="#BB2C08" percent="{{progressPercent}}" color="#dadada" stroke-width="2"></progress>
+      
+      <text>{{duration}}</text>
     </view>
     <view class="playingaction">
       <!-- 循环方式 -->

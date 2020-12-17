@@ -35,6 +35,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    playList: []
+    playList: [{name: '利阿斯'}], // 歌单列表
+    playListId: 0, // 歌单id
   }
 })
