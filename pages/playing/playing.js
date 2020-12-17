@@ -31,7 +31,7 @@ Page({
   onLoad: function (options) {
     this.setData({songId: options.id})
     this.getSongDetail();
-    this.getSongUrl();
+    // this.getSongUrl();
     app.globalData.userInfo = 's'
   },
   onClickShuffle(e){
@@ -83,7 +83,7 @@ Page({
         wx.setNavigationBarTitle({
           title: res.songs[0].name,
         })
-        // this.getSongUrl()
+        this.getSongUrl()
       }
     })
   },

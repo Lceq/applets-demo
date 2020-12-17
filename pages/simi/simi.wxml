@@ -1,0 +1,46 @@
+<!--pages/simi/simi.wxml-->
+<import src="../../pages/component/loading.wxml" />
+<template is="loading" wx:if="{{!loading}}"></template>
+<block wx:else>
+  <block wx:if="{{playlists.length != 0}}">
+    <view class="sm-title">包含这首歌的歌单</view>
+    <view class="sm-list" >
+    <view class="list-item" wx:for="{{playlists}}" wx:key="id">
+      <navigator url="../playlist/playlist?id={{item.id}}">
+        <view>
+          <image class="cover" src="{{item.coverImgUrl}}"></image>
+          <view class="cover-i">
+            <image src="../../image/personality/p0.png"></image>
+            {{item.playCount}}
+          </view>
+          <view class="info">
+            <view>{{item.name}}</view>
+            <view class="des">
+              <image src="../../image/personality/userhea.png"></image>
+              {{item.creator.nickname}}
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    </view>
+  </block>
+  <block wx:if="{{songs.length != 0}}">
+    <view class="sm-title">喜欢这首歌的人也听</view>
+    <view class="song-list" >
+      <view class="song-item flex-between" wx:for="{{songs}}" wx:key="id"> 
+        <navigator style="width: 100%" url="../playing/playing?id={{item.id}}">
+          <view class="flex-between">
+            <view class="item-main">
+                <view>{{item.name}}</view>
+                <view class="relistdes"> {{item.artists[0].name}}-{{item.album.name}}</view>
+              </view>
+              <navigator url="../mv/mv?mvid={{item.mvid}}" wx:if="{{item.mvid != 0}}">
+                <image class="song-item-i" src="../../image/radio.png"></image>
+              </navigator>
+            </view>
+        </navigator>
+      </view>
+    </view>
+  </block>
+</block>

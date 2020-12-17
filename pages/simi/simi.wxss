@@ -1,0 +1,95 @@
+/* pages/simi/simi.wxss */
+.sm-title{
+  padding: 0 20rpx;
+  font-size: 24rpx;
+  display: block;
+  color: #6a6a6a;
+  background-color: #eeeff0;
+  line-height: 60rpx;
+}
+.sm-list{
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+.list-item{
+  width: 231.3rpx;
+  margin: 15rpx 0 15rpx 15rpx;
+  box-sizing: border-box;
+  line-height: 1.2;
+  position: relative;
+}
+.cover {
+ 
+  height: 231.3rpx;
+  width: 231.3rpx;
+  overflow: hidden;
+  margin-bottom: 10rpx;
+}
+.cover-i{
+  position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    z-index: 1;
+    font-size: 24rpx;
+    padding: 8rpx 15rpx 8rpx 40rpx;
+    background-image: linear-gradient(90deg, rgba(0,0,0,0),rgba(0,0,0,.2));
+    text-align: right;
+
+}
+.cover-i image{
+  width: 25rpx;
+  height: 25rpx;
+}
+.info view{
+  word-break: keep-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.des{
+  color: #888;
+    font-size: 24rpx;
+}
+.des image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.song-list{
+  margin-left: 20rpx;
+}
+.song-item{
+  padding: 10rpx 10rpx 10rpx 0;
+    margin: 0;
+    align-items: center;
+    margin-left: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    line-height: 1.5;
+    position: relative;
+    border-bottom: 1rpx solid #e1e2e3;
+}
+.item-main{
+  box-sizing: border-box;
+    flex: 1;
+    overflow: hidden;
+}
+.item-main view{
+  word-break: keep-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.6;
+  width: 100%;
+  word-wrap: break-word;
+}
+.relistdes{
+  color: #999;
+    font-size: 24rpx;
+    white-space: -2rpx;
+}
+.song-item-i{
+  width: 56rpx;
+  height: 50rpx;
+}

@@ -75,23 +75,35 @@
 </view>
 <!-- more -->
 <view bindtap="onClickShow" class="showM" hidden="{{isShowM}}"></view>
-<view class="more" hidden="{{isMore}}">
-  <view class="more-header">源于还</view>
+<view class="more" hidden="{{isMore}}" wx:for="{{songs.songs}}" wx:key="index" >
+  <view class="more-header">{{item.name}}</view>
   <view class="flex-align-center more-item">
     <image class="more-i" src="../../image/cm2_lay_icn_fav_new@2x.png"></image>
     <view class="cmain">收藏到歌单</view>
   </view>
   <view class="flex-align-center more-item">
-    <image class="more-i" src="../../image/cm2_lay_icn_similar_new@2x.png"></image>
-    <view class="cmain">相似推荐</view>
+    <navigator style="width: 100%" url="../simi/simi?id={{item.id}}">
+      <view style="width: 100%" class="flex-align-center">
+        <image class="more-i" src="../../image/cm2_lay_icn_similar_new@2x.png"></image>
+        <view class="cmain">相似推荐</view>
+      </view>
+    </navigator>
+    
   </view>
   <view class="flex-align-center more-item">
-    <image class="more-i" src="../../image/cm2_lay_icn_artist_new@2x.png"></image>
-    <view class="cmain">歌手：Kiki</view>
+    <navigator style="width: 100%" url="../artist/artist?id={{item.ar[0].id}}">
+      <view style="width: 100%" class="flex-align-center">
+        <image class="more-i" src="../../image/cm2_lay_icn_artist_new@2x.png"></image>
+        <view class="cmain">歌手：{{item.ar[0].name}}</view>
+      </view>
+    </navigator>
   </view>
   <view class="flex-align-center more-item">
-    <!-- <navigator></navigator> -->
-    <image class="more-i" src="../../image/personality/new-music.png"></image>
-    <view class="cmain">专辑：云与海</view>
+    <navigator style="width: 100%" url="../album/album?id={{item.al.id}}">
+      <view class="flex-align-center" style="width: 100%">
+        <image class="more-i" src="../../image/personality/new-music.png"></image>
+        <view class="cmain">专辑：{{item.al.name}}</view>
+      </view>
+    </navigator>
   </view>
 </view>
