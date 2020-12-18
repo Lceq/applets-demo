@@ -36,6 +36,7 @@ App({
   globalData: {
     userInfo: null,
     playList: [{name: '利阿斯'}], // 歌单列表
+    playIndex: 0,// 点击的歌曲的下标
     playListId: 0, // 歌单id
   }
 })

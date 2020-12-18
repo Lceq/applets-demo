@@ -15,9 +15,11 @@ Page({
     shuffle: '1',
     playing: true,
     isMore: true,
+    isPlayList: true,
     isShowM: true,
     songs:{},
     songUrl: '',
+    playList: [],
     totalDuration: 0,
     duration: '00:00', //歌曲总时长
     currentPosition: '00:00', // 已经播放的时间
@@ -32,14 +34,102 @@ Page({
     this.setData({songId: options.id})
     this.getSongDetail();
     // this.getSongUrl();
-    app.globalData.userInfo = 's'
+    this.setData({
+      playList: app.globalData.playList,
+      playIndex:  app.globalData.playIndex
+    })
+    app.globalData.playIndex = Number(options.playIndex)
+    },
+  // 上一首/下一首
+  onOtherClick(e){
+    let other = Number(e.currentTarget.dataset.other)
+    // 单曲循环
+    if(this.data.shuffle ==1){
+      // app.globalData.playIndex = app.globalData.playIndex
+    }
+    // 列表循环
+    if(this.data.shuffle ==2){
+      if(app.globalData.playIndex > 0){
+        app.globalData.playIndex += other
+      } else {
+        app.globalData.playIndex = app.globalData.playList.length - 1
+      }
+    }
+    //  随机播放
+    if(this.data.shuffle ==3){
+      if(Math.random() - (0.5)){
+        if(app.globalData.playIndex > 0){
+          app.globalData.playIndex += -1
+        } else {
+          app.globalData.playIndex = app.globalData.playList.length - 1
+        }
+      } else{
+        if(app.globalData.playIndex < app.globalData.playList.length -1){
+          app.globalData.playIndex += 1
+        } else {
+          app.globalData.playIndex = 0
+        }
+      }
+    }
+
+    let id = app.globalData.playList[app.globalData.playIndex].id;
+    this.setData({
+      songId: id,
+      playing: true,
+      playIndex: app.globalData.playIndex
+    })
+    this.getSongDetail();
+  },
+  setNextSong(){
+    if(app.globalData.playIndex < app.globalData.playList.length -1){
+      app.globalData.playIndex += 1
+    } else {
+      app.globalData.playIndex = 0
+    }
+    let id = app.globalData.playList[app.globalData.playIndex].id;
+    this.setData({
+      songId: id,
+      playing: true,
+      playIndex: app.globalData.playIndex
+    })
+    this.getSongDetail();
+  },
+  onClickSong(e){
+    let index = e.currentTarget.dataset.idx;
+    app.globalData.playIndex = index;
+    this.setData({
+      playIndex: app.globalData.playIndex 
+    })
+    let id = app.globalData.playList[app.globalData.playIndex].id;
+      this.setData({
+        songId: id,
+        playing: true,
+        playIndex: app.globalData.playIndex
+      })
+      this.getSongDetail();
   },
   onClickShuffle(e){
     let s = e.currentTarget.dataset.s;
     this.setData({
       shuffle: s
     })
+    var msg = "";
+    switch (this.data.shuffle) {
+      case '1':
+        msg = "顺序播放";
+        break;
+      case '2':
+        msg = "单曲播放";
+        break;
+      case '3':
+        msg = "随机播放"
+    }
+    wx.showToast({
+      title: msg,
+      duration: 2000
+    })
   },
+  // 播放/暂停
   onClickPlay(e){
     let p = e.currentTarget.dataset.p;
     if(p == 1){
@@ -62,6 +152,19 @@ Page({
   onClickShow(){
     this.setData({
       isMore: true,
+      isShowM: true,
+      isPlayList: true
+    })
+  },
+  onClickPlaying(){
+    this.setData({
+      isPlayList: false,
+      isShowM: false
+    })
+  },
+  onClickClosePaly(){
+    this.setData({
+      isPlayList: true,
       isShowM: true
     })
   },
@@ -79,7 +182,6 @@ Page({
         this.setData({
           songs:res
         })
-        console.log(11,res,this.data.songs);
         wx.setNavigationBarTitle({
           title: res.songs[0].name,
         })
@@ -93,12 +195,10 @@ Page({
         this.setData({
           songUrl: res.data[0].url
         })
-        console.log(this.data.songs);
         wx.playBackgroundAudio({
           dataUrl: res.data[0].url,
           title: this.data.songs.songs[0].name
         })
-        console.log('获取URL',res);
       }
     })
   },
@@ -111,7 +211,6 @@ Page({
     setTimeout(() => {
       wx.getBackgroundAudioPlayerState({
         complete(res){
-          console.log('获取URL后',res,res.duration);
           _this.setData({
             duration: _this.setTime(res.duration),
             totalDuration: res.duration
@@ -126,6 +225,9 @@ Page({
               progressPercent: (res.currentPosition/ res.duration)*100,
               percent: ((res.currentPosition/ res.duration)*100)
             })
+            if(res.currentPosition == res.duration){
+              _this.setNextSong();
+            }
           }
         })
       },1000)
@@ -135,8 +237,7 @@ Page({
     this.setData({
       percent: e.detail.value
     })
-    let currentPosition = e.detail.value / 100 * this.data.totalDuration
-    console.log(e.detail.value, currentPosition);
+    let currentPosition = e.detail.value / 100 * this.data.totalDuration;
     wx.seekBackgroundAudio({
       position: currentPosition
     })

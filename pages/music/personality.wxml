@@ -38,7 +38,7 @@
 
   </view>
   <!-- 推荐歌单 -->
-  <!-- <view>
+  <view>
     <view class="play-nav">
       <view>
         <image src="../../image/personality/play-list.png" width="30"></image>
@@ -57,10 +57,10 @@
         </navigator>
       </view>
     </view>
-  </view> -->
+  </view>
 
   <!-- 最新音乐 -->
-  <!-- <view>
+  <view>
     <view class="play-nav">
       <view>
         <image src="../../image/personality/new-music.png" width="30"></image>
@@ -79,7 +79,7 @@
         </navigator>
       </view>
     </view>
-  </view> -->
+  </view>
   <!-- 推荐mv -->
   <view>
     <view class="play-nav">

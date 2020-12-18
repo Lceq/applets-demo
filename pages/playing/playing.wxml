@@ -52,7 +52,7 @@
         <image src="../../image/cm2_icn_shuffle@2x.png" />
       </view>
       <!-- 向前 -->
-      <view class="pa-saction" data-other="-1">
+      <view bindtap="onOtherClick" class="pa-saction" data-other="-1">
         <image src="../../image/ajh.png" />
       </view>
       <!-- 播放/暂停 -->
@@ -63,11 +63,11 @@
         <image id='pa-pause' src="../../image/ajf.png" />
       </view>
       <!-- 向后 -->
-      <view class="pa-saction" data-other="1">
+      <view bindtap="onOtherClick" class="pa-saction" data-other="1">
         <image src="../../image/ajb.png" />
       </view>
       <!-- 列表 -->
-      <view class="pa-saction">
+      <view class="pa-saction" bindtap="onClickPlaying">
         <image src="../../image/cm2_icn_list@2x.png" />
       </view>
     </view>
@@ -106,4 +106,33 @@
       </view>
     </navigator>
   </view>
+</view>
+<!-- 歌单列表 -->
+{{}}
+<view class="playList" hidden="{{isPlayList}}" >
+  <view class="play-title">
+    <view>
+      <text bindtap="onClickShuffle" hidden="{{shuffle==1 ? false : true}}" data-s="2">列表循环</text>
+      <text bindtap="onClickShuffle" hidden="{{shuffle==2 ? false : true}}" data-s="3">单曲循环</text>
+      <text bindtap="onClickShuffle" hidden="{{shuffle==3 ? false : true}}" data-s="1">随机播放</text>
+      <text>（{{playList.length}}）</text>
+    </view>
+   
+    
+  </view>
+  <view class="playList-list">
+    <view wx:for="{{playList}}" wx:key="id" >
+      <view class="flex-between p-item">
+          <view class="i-main {{playIndex == index ? 'active' : ''}}" bindtap="onClickSong" data-idx="{{index}}">
+            <image hidden="{{playIndex !== index}}" class="i-width-25" src="../../image/voice.png"></image>
+            <text>{{item.name}}- </text>
+            <text class="i-a {{playIndex == index ? 'active' : ''}}">{{item.ar[0].name||item.artists[0].name}}</text>
+          </view>
+          <view>
+            <image class="i-image" src="../../image/close.png"></image>
+          </view>
+      </view>
+    </view>
+  </view>
+  <view bindtap="onClickClosePaly" class="paly-footer">关闭</view>
 </view>

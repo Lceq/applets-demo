@@ -24,7 +24,8 @@ Page({
           privileges: res.privileges,
           cover: id2Url.id2Url('' + (res.playlist.coverImgId_str || res.playlist.coverImgId))
         })
-        app.globalData.playList = res.playlist.trackIds;// tracks
+        console.log(res);
+        app.globalData.playList = res.playlist.tracks;// tracks
         app.globalData.playListId = res.playlist.id;// tracks
         wx.setNavigationBarTitle({
           title: res.playlist.name

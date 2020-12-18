@@ -43,7 +43,7 @@
       </view>
     </view>
     <view wx:for="{{item.tracks}}"  wx:for-item="items" wx:for-index="idx" wx:key="idx">
-      <navigator url="../playing/playing?id={{items.id}}">
+      <navigator url="../playing/playing?id={{items.id}}&playIndex={{idx}}">
         <view class="flex-between">
           <view class="s-idx">
             <text>{{idx+1}}</text>
