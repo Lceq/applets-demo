@@ -1,0 +1,17 @@
+<!--pages/login/login.wxml-->
+<form action="" bindsubmit="login">
+  <view class="form">
+    <view class="flex form-input">
+      <text>账号：</text>
+      <input class="weui-input" name="phone" placeholder="请输入电话号" />
+    </view>
+    <view class="flex form-input">
+      <text>密码：</text>
+      <input class="weui-input" name="password" placeholder="请输入密码" />
+    </view>
+    <view class="form-common">
+      <button style="background-color: #BB2C08;width: 100%;" type="primary" hover-class="btnhover" formType="submit">登录</button>
+    </view>
+  </view>
+   
+</form>

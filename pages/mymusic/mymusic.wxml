@@ -1,0 +1,13 @@
+<!--pages/mymusic/mymusic.wxml-->
+<view>
+ <view class="flex-between avata">
+   <view class="flex-align-center">
+    <image class="avatarUrl" src="{{userInfo.avatarUrl}}"></image>
+    <view>{{userInfo.nickname}}</view>
+   </view>
+   <view>
+     <button style="width: 100px" class="logoutButton" >退出登录</button>
+   </view>
+ </view>
+ 
+</view>

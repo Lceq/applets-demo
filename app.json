@@ -15,7 +15,9 @@
     "pages/program/program",
     "pages/djradio/djradio",
     "pages/playing/playing",
-    "pages/simi/simi"
+    "pages/simi/simi",
+    "pages/mymusic/mymusic",
+    "pages/login/login"
   ],
   "requiredBackgroundModes": ["audio", "location"],
   "window": {
@@ -38,8 +40,10 @@
         "text": "发现音乐"
       },
       {
-        "pagePath": "pages/weather/weather",
-        "text": "天气查询"
+        "pagePath": "pages/mymusic/mymusic",
+        "iconPath": "image/tab-img/mymusic_default.png",
+        "selectedIconPath": "image/tab-img/mymusic_default.png",
+        "text": "我的音乐"
       }
 
     ]

@@ -1,0 +1,12 @@
+/* pages/login/login.wxss */
+.form-input{
+  /* margin: 20rpx 60rpx; */
+  border-bottom: 1px solid #e1e1e1;
+  padding: 20rpx 0rpx;
+}
+.form{
+  margin-top: 100rpx;
+  padding: 50rpx;
+}
+.form-common button,.btnhover{margin-top: 48rpx;display: block;background-color: #d43c33;height: 2.4em;padding: 0;line-height: 2.4;border-radius: 5rpx;
+  font-size: 32rpx}

@@ -1,0 +1,16 @@
+/* pages/mymusic/mymusic.wxss */
+.avata{
+  padding: 40rpx 30rpx;
+}
+.avatarUrl{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+.logoutButton{
+  color: #000;
+  font-size: 30rpx;
+  border-radius: 42rpx;
+  font-weight: 400;
+}
