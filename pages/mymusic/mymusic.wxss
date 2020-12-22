@@ -14,3 +14,9 @@
   border-radius: 42rpx;
   font-weight: 400;
 }
+.avatarImgae{
+  color: rgb(59, 142, 209);
+  font-size: 12px;
+  display: block;
+  margin-top: 5px;
+}

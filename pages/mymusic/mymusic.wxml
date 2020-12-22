@@ -2,8 +2,11 @@
 <view>
  <view class="flex-between avata">
    <view class="flex-align-center">
-    <image class="avatarUrl" src="{{userInfo.avatarUrl}}"></image>
-    <view>{{userInfo.nickname}}</view>
+    <image bindtap='showImg'  class="avatarUrl" src="{{userInfo.avatarUrl}}"></image>
+    <view>
+      {{userInfo.nickname}}
+      <text class="avatarImgae" bindtap="changeUpload">更换头像</text>
+    </view>
    </view>
    <view>
      <button style="width: 100px" class="logoutButton" >退出登录</button>

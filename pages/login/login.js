@@ -24,13 +24,22 @@ Page({
       if(res.code === 200){
         wx.setStorageSync('loginCookie', res.token);
         wx.setStorageSync('userId', res.account.id);
-        console.log(res);
-        if(res.token){
-          wx.navigateTo({
-            url: '../mymusic/mymusic',
+        wx.setStorageSync('cookie', res.cookie);
+        wx.navigateTo({
+          url: '../mymusic/mymusic',
+        })
+        console.log('登录采访稿，跳转页面');
+      } else if(res.code === 400){
+          wx.showModal({
+            title: '提示',
+            content: '电话号格式不对！'
+        })
+      } else {
+          wx.showModal({
+            title: '提示',
+            content: res.message
           })
         }
-      }
     })
   },
   /**

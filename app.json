@@ -17,7 +17,8 @@
     "pages/playing/playing",
     "pages/simi/simi",
     "pages/mymusic/mymusic",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/upload/upload"
   ],
   "requiredBackgroundModes": ["audio", "location"],
   "window": {
