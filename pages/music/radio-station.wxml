@@ -52,7 +52,7 @@
             <view class="cat-name">{{item.name}}</view>
           </view>
           <view class="hot-dj-num">
-            <image class="class-p" src="'../../image/personality/p0.png'"></image>
+            <image class="class-p" src="../../image/personality/p0.png"></image>
             <text> {{item.subCount}}订阅</text>
           </view>
         </navigator>

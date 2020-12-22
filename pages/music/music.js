@@ -23,7 +23,9 @@ Page({
     },
     songSheet:{
       playlists: [],
-      cCatlist: []
+      cCatlist: [],
+      limit: 20,
+      offset: 0
     },
     radio:{
       bannerList: [],
@@ -55,6 +57,8 @@ Page({
     let index = e.currentTarget.dataset.t
     if(index == 0){
       this.setData({tabIs: 'personality'})
+      this.data.songSheet.offset = 0;
+      this.setData({songSheet: this.data.songSheet})
       this.getPersonalityTemRequest();
     } else if(index == 1){
       this.setData({tabIs: 'song-sheet'})
@@ -123,6 +127,13 @@ Page({
       
     })
    },
+  //  页面上拉触底事件的处理函数（处理分页）
+  onReachBottom: function () {
+    console.log('页面上拉触底事件的处理函数');
+      if (this.data.tabIndex == 1) {
+          this.getSongList(1);//更多歌单
+      }
+  },
     // 歌单分类
    getCatList(){
      return playlistCatlist({}).then(res => {
@@ -132,12 +143,22 @@ Page({
      })
    },
   // 歌单列表
-  getSongList(){
+  getSongList(isAdd){
     return topPlaylist({
-
+      limit: this.data.songSheet.limit,
+      offset: this.data.songSheet.offset,
     }).then(res => {
       if(res.code === 200){
-        this.data.songSheet.playlists = res.playlists;
+        let list = []
+        //  this.data.songSheet.playlists 
+        if(!isAdd){
+          list = res.playlists;
+        } else {
+          list= this.data.songSheet.playlists.concat(res.playlists);
+        }
+        this.data.songSheet.playlists = list
+        this.data.songSheet.offset +=res.playlists.length
+        console.log('歌单分页',res.playlists[0].name,this.data.songSheet.offset);
         this.setData({
           songSheet: this.data.songSheet
         })
@@ -262,14 +283,6 @@ Page({
   onPullDownRefresh: function () {
 
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
   /**
    * 用户点击右上角分享
    */

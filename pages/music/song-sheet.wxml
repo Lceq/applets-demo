@@ -16,7 +16,7 @@
           <view class="cat-name">{{item.name}}</view>
           <view class="cat-art">{{item.creator.nickname }}</view>
           <view class="cat-num">
-            <image class="class-p" src="'../../image/personality/p0.png'"></image>
+            <image class="class-p" src="../../image/personality/p0.png"></image>
             <text> {{item.playCount}}</text>
           </view>
         </navigator>

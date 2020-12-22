@@ -44,7 +44,7 @@
         "pagePath": "pages/mymusic/mymusic",
         "iconPath": "image/tab-img/mymusic_default.png",
         "selectedIconPath": "image/tab-img/mymusic_default.png",
-        "text": "我的音乐"
+        "text": "MY我的音乐"
       }
 
     ]
