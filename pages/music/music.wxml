@@ -1,7 +1,6 @@
-<!-- weather -->
 
 <!-- tab -->
-<view class="tab">
+<!-- <view class="tab">
    <view class="tab-item {{tabIndex == 0 ?'active' : ''}}" bindtap="clickTabItem" data-t="0">
       <text>个性推荐</text>
    </view>
@@ -17,9 +16,13 @@
    <navigator url="../search/search" class="tab-item">
       <icon type="search" size="25" color="#666"></icon>
    </navigator>
-</view>
+</view> -->
 <view>
 <view style="color: red;padding-top:80rpx"></view>
+<tabs bind:clickTabItem="clickTabItem" tabsList="{{tabsList}}" tabIndex="{{tabIndex}}"></tabs>
+<!-- <import src="../component/tabs/tabs.wxml"></import>
+<template is="tabs" data="{{tabsList,tabIndex}}"></template> -->
+
 <import src="../component/loading.wxml"></import>
 <template is="loading" data="{{isHidden: isHidden ||songSheetLoading}}"></template>
   <!-- 引入模板 -->

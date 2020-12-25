@@ -10,6 +10,15 @@ Page({
    * 页面的初始数据
    */
   data: {
+    userInfo:[
+      {nickName:'username',avatarUrl:'userImg.jpg'}
+   ],
+    tabsList:[
+      {id: 1,name: '个性推荐',},
+      {id: 2,name: '歌单',},
+      {id: 3,name: '主播电台',},
+      {id: 4,name: '排行榜',},
+    ],
     isHidden: false,
     songSheetLoading: false,
     tabIndex: 0,
@@ -37,6 +46,10 @@ Page({
       singerList: [],
     }
   },
+  onUserInfo(e){
+    console.log('子组件传值',e.detail);
+  },
+
   // 更多推荐歌单
   songMore(){
     this.setData({tabIs: 'song-sheet'})
@@ -54,8 +67,8 @@ Page({
     this.getRadioStationRequest()
   },
   clickTabItem(e){
-    this.setData({tabIndex: e.currentTarget.dataset.t})
-    let index = e.currentTarget.dataset.t
+    this.setData({tabIndex: e.detail})
+    let index = e.detail
     if(index == 0){
       this.setData({tabIs: 'personality'})
       this.data.songSheet.offset = 0;
