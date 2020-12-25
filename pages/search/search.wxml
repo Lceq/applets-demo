@@ -4,11 +4,11 @@
     <view class="flex-between">
       <view class="form-i form-input flex" >
         <view>
-              <icon type="search" size="20" color="#aaa" />
+              <icon type="search" size="20" color="#aaa"></icon>
         </view>
-        <input type="text" auto-focus maxlength="20" name="name" bindinput="inputext" placeholder="搜索单曲、歌手、专辑等" value="{{value}}" />
+        <input type="text" autofocus maxlength="20" name="name" bindinput="inputext" placeholder="搜索单曲、歌手、专辑等" value="{{value}}" />
         <view class="sf_clear" hidden="{{!value}}" bindtap="clearInput">
-            <icon type="clear" size="16" color="#aaa" />
+            <icon type="clear" size="16" color="#aaa"></icon>
         </view>
       </view>
       <view class="button flex-end">
@@ -16,10 +16,10 @@
       </view>
     </view>
   </form>
-  <!-- tabs -->
+  <!-- tabs Namespace 'wx' is not bound-->
   <view class="tab" wx:if="{{value && searchLoading}}">
     <view wx:for="{{tabsList}}" wx:key="*this" class="tab-item {{tabType == item.type ?'active' : ''}}" bindtap="clickTabItem" data-type="{{item.type}}">
-      <text>{{item.name}}</text> 
+      <text>{{item.name}}</text>
     </view>
   </view>
   <view>
@@ -56,7 +56,7 @@
           </view>
         </navigator>
       </view>
-      
+
     </view>
     <!-- 专辑 -->
     <view class="tab-item-t"  wx:if="{{tabType === 10 && searchLoading}}">
@@ -135,7 +135,7 @@
       </view>
     </view>
   </view>
- 
+
    <!-- 历史搜索 -->
    <view class="history"  wx:if="{{!searchLoading}}">
      <view class="his" wx:if="{{recent.length}}">历史搜索</view>

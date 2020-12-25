@@ -3,9 +3,9 @@
 <!-- tab -->
 <view class="tab">
    <view class="tab-item {{tabIndex == 0 ?'active' : ''}}" bindtap="clickTabItem" data-t="0">
-      <text>个性推荐</text> 
+      <text>个性推荐</text>
    </view>
-   <view class="tab-item {{tabIndex == 1 ?'active' : ''}}" bindtap="clickTabItem" data-t="1"> 
+   <view class="tab-item {{tabIndex == 1 ?'active' : ''}}" bindtap="clickTabItem" data-t="1">
       <text>歌单</text>
    </view>
    <view class="tab-item {{tabIndex == 2 ?'active' : ''}}" bindtap="clickTabItem" data-t="2">
@@ -15,14 +15,20 @@
       <text>排行榜</text>
    </view>
    <navigator url="../search/search" class="tab-item">
-      <icon type="search" size="25" color="#666" />
+      <icon type="search" size="25" color="#666"></icon>
    </navigator>
 </view>
 <view>
+<view style="color: red;padding-top:80rpx"></view>
+<import src="../component/loading.wxml"></import>
+<template is="loading" data="{{isHidden: isHidden ||songSheetLoading}}"></template>
   <!-- 引入模板 -->
-<import src="personality.wxml"/> 
+<import src="personality.wxml"/>
 <import src="song-sheet.wxml"></import>
 <import src="radio-station.wxml"></import>
 <import src="ranking-list.wxml"></import>
-<template is="{{tabIs}}" data="{{personality: personality,songSheet: songSheet,radio: radio, ranking: ranking}}"/>
+
+<view wx:if="{{!isHidden || songSheetLoading}}">
+   <template  is="{{tabIs}}" data="{{personality: personality,songSheet: songSheet,radio: radio, ranking: ranking}}"/>
+</view>
 </view>

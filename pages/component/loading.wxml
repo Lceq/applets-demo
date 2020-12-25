@@ -1,5 +1,6 @@
 <template name="loading">
-  <view class="cntloading">{{text||'加载中...'}}
+  <!-- false隐藏 -->
+  <view hidden="{{!isHidden}}" class="cntloading">{{text||'加载中...'}}
     <view>
       <text class="cl1"></text>
       <text class="cl2"></text>

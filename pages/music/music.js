@@ -10,7 +10,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    mes: 'sssssssssss',
+    isHidden: false,
+    songSheetLoading: false,
     tabIndex: 0,
     tabIs: 'personality',
     personality: {
@@ -123,13 +124,17 @@ Page({
     let n =  this.getNewSongRequest();
     let m =  this.getMVListRequest();
     let R=  this.getRadioStationListRequest();
+    this.setData({
+      isHidden: true
+    })
     Promise.all([b,p,n,m,R]).then(res => {
-      
+      this.setData({
+        isHidden: false
+      })
     })
    },
   //  页面上拉触底事件的处理函数（处理分页）
   onReachBottom: function () {
-    console.log('页面上拉触底事件的处理函数');
       if (this.data.tabIndex == 1) {
           this.getSongList(1);//更多歌单
       }
@@ -144,11 +149,19 @@ Page({
    },
   // 歌单列表
   getSongList(isAdd){
+    this.setData({
+      isHidden: !isAdd ? true : false,
+      songSheetLoading: !isAdd ? false : true
+    })
     return topPlaylist({
       limit: this.data.songSheet.limit,
       offset: this.data.songSheet.offset,
     }).then(res => {
       if(res.code === 200){
+        this.setData({
+          isHidden: false,
+          songSheetLoading: false
+        })
         let list = []
         //  this.data.songSheet.playlists 
         if(!isAdd){
@@ -158,7 +171,6 @@ Page({
         }
         this.data.songSheet.playlists = list
         this.data.songSheet.offset +=res.playlists.length
-        console.log('歌单分页',res.playlists[0].name,this.data.songSheet.offset);
         this.setData({
           songSheet: this.data.songSheet
         })
@@ -167,6 +179,9 @@ Page({
   },
     // 歌单template下的接口
    getSongSheetRequest(){
+    this.setData({
+      isHidden: true
+    })
      this.getCatList();
      this.getSongList();
    },
@@ -217,16 +232,30 @@ Page({
    },
    // 主播电台 teamplate 下的接口  djradioCatelist（电台分类）,programRecommend（推荐节目）,djRecommend（精选电台）,djHot（热门电台）
    getRadioStationRequest(){
-     this.getDjradioCatelist();
-     this.getProgramRecommend();
-     this.getDjRecommend();
-     this.getDjradioHot();
-     this.getDjBannerRequset();
+    let cate = this.getDjradioCatelist();
+    let rec= this.getProgramRecommend();
+    let com= this.getDjRecommend();
+    let hot= this.getDjradioHot();
+   let banner=  this.getDjBannerRequset();
+     this.setData({
+      isHidden: true
+    })
+     Promise.all([cate,rec,com,hot,banner]).then(res => {
+      this.setData({
+        isHidden: false
+      })
+     })
    },
    // 获取榜单内容
    getTopListRequest(){
+    this.setData({
+      isHidden: true
+    })
      return toplistDetail({}).then(res => {
        if(res.code === 200){
+        this.setData({
+          isHidden: false
+        })
          this.data.ranking.officialList = res.list.filter(x => x.ToplistType)
          this.data.ranking.singerList = [res.artistToplist]
          this.data.ranking.globalList = res.list.filter(x => !x.ToplistType)

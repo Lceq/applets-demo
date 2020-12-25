@@ -21,7 +21,7 @@
   border-bottom-color: #BB2C08;
 }
 .banner {
-  padding-top: 80rpx;
+  /* padding-top: 80rpx; */
 }
 /* nav */
 .nav{
@@ -126,7 +126,7 @@
   padding-top: 80rpx;
 }
 .cat{
-  padding: 100rpx 10rpx 20rpx 10rpx;
+  padding: 20rpx 10rpx 20rpx 10rpx;
   display: flex;
   justify-content: space-between;
   width: 100%;
