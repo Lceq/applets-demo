@@ -118,9 +118,7 @@
   padding-left: 10rpx;
 }
 .simi-item{
-  margin: 10rpx 10rpx 10rpx 0rpx;
-  /* flex: 1; */
-  width: 31.333%;
+  width:99px;
 }
 .simi-image{
   width: 239rpx;
@@ -155,8 +153,7 @@
 }
 .simi-list{
   padding-left: 10rpx;
+  overflow: hidden;
   display: flex;
-  flex-wrap: wrap;
-  justify-self: start;
-  position: relative;
+  flex-wrap: wrap
 }

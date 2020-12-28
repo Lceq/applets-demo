@@ -49,8 +49,11 @@
   left: 0;
   top: 80rpx;
   z-index: 2;
+  overflow-x: auto;
+  text-align: center;
 }
 .tab-item{
+  flex: 0 0 160rpx;
   height: 60rpx;
   border-bottom: 1px solid  rgba(240,240,240,.8);
 }
@@ -195,4 +198,35 @@
   width: 60rpx;
   margin-right: 49rpx;
   /* background-color: #b6b3b3; */
+}
+.aa{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow-x: auto;
+  text-align: center;
+}
+.bb{
+  flex: 0 0 260rpx;
+  background-color: #dd44dd;
+  border: 1px solid #000;
+}
+.scroll-view{
+  width: 900px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+.scroll-view-item{
+  width: 300px;
+  height: 80px;
+}
+.demo-text-1{
+  background-color: pink;
+}
+.demo-text-2{
+  background-color: royalblue;
+}
+.demo-text-3{
+  background-color: rebeccapurple;
 }

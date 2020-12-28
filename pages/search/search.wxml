@@ -22,6 +22,14 @@
       <text>{{item.name}}</text>
     </view>
   </view>
+  <scroll-view scroll-x="true"  show-scrollbar="{{true}}">
+    <view class="scroll-view">
+      <view id="demo1" class="scroll-view-item demo-text-1"></view>
+      <view id="demo2"  class="scroll-view-item demo-text-2"></view>
+      <view id="demo3" class="scroll-view-item demo-text-3"></view>
+    </view>
+  </scroll-view>
+ 
   <view>
     <!-- 单曲 -->
     <view class="tab-item-t" wx:if="{{tabType === 1 && searchLoading}}">

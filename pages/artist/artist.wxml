@@ -81,20 +81,25 @@
     <view class="pro-re-text">
        <text class="p-t">相似歌手</text>
     </view>
-    <view class="simi-list">
-      <view class="simi-item" wx:for="{{simi}}" wx:key="id">
-        <navigator url="artist?id={{item.id}}">
-          <view>
-            <image class="simi-image" src="{{item.picUrl}}"></image>
-            <view class="simi-count">
-              <image class="simi-count-i" src="../../image/video.png"></image>
-              {{item.playCount}}
-            </view>
-            <view class="simi-name">{{item.name}}</view>
-            <view class="simi-artist">{{item.artistName}}</view>
+    <view style="overflow: hidden"> 
+      <scroll-view scroll-x="true">
+        <view class="simi-list" style="width: {{99*simi.length}}px">
+          <view class="simi-item" wx:for="{{simi}}" wx:key="id">
+            <navigator url="artist?id={{item.id}}">
+              <view>
+                <image class="simi-image" src="{{item.picUrl}}"></image>
+                <view class="simi-count">
+                  <image class="simi-count-i" src="../../image/video.png"></image>
+                  {{item.playCount}}
+                </view>
+                <view class="simi-name">{{item.name}}</view>
+                <view class="simi-artist">{{item.artistName}}</view>
+              </view>
+            </navigator>
           </view>
-        </navigator>
-      </view>
+        </view>
+      </scroll-view>
     </view>
+   
   </view>
 </view>
