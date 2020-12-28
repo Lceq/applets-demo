@@ -9,11 +9,12 @@
   top: 0;
   left: 0;
   z-index: -2;
+  filter: blur(30px) brightness(.8)
 }
 .play-bgca{
   width: 100%;
-  height: 430rpx;
-  background-color: rgba(128, 125, 125, 0.9);
+  height: 436rpx;
+  /* background-color: rgba(128, 125, 125, 0.9); */
   position: absolute;
   top: 0;
   left: 0;
@@ -84,6 +85,7 @@
 }
 .nav-song{
   margin-top: 30rpx;
+  background-color: #fff;
 }
 .song-length{
   font-size: 10px;

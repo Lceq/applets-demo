@@ -1,4 +1,7 @@
-<view class="play-header" wx:for="{{playlist}}" wx:key="id" xmlns:wx="" xmlns:wx="">
+<import src="../component/loading.wxml"></import>
+<template is="loading" data="{{isHidden: isHidden}}"></template>
+<block hidden="{{!isHidden}}">
+  <view class="play-header" wx:for="{{playlist}}" wx:key="id" xmlns:wx="" xmlns:wx="">
   <image class="play-bgc" src="{{item.coverImgUrl}}"></image>
   <view class="play-bgca"></view>
   <view class="play-main flex">
@@ -16,49 +19,50 @@
       </view>
     </view>
   </view>
-</view>
-<view class="flex-around" wx:for="{{playlist}}" wx:key="id">
-  <view class="nav-item">
-    <image class="nav-item-image" src="../../image/file.png"></image>
-     <view style="text-align:center">{{item.subscribedCount}}</view>
   </view>
-  <view class="nav-item">
-    <image class="nav-item-image" src="../../image/comment.png"></image>
-     <view style="text-align:center">{{item.commentCount}}</view>
-  </view>
-  <view class="nav-item">
-    <image class="nav-item-image" src="../../image/forward.png"></image>
-    <view style="text-align:center">{{item.shareCount}}</view>
-  </view>
-</view>
-<view class="nav-song" >
-  <view wx:for="{{playlist}}" wx:key="id" >
-    <view class="flex">
-      <view class="play">
-        <image class="i-width-40" src="../../image/pl-playall.png"></image>
-      </view>
-      <view class="po">
-        <text>播放全部</text>
-        <text class="song-length">({{item.tracks.length}}首)</text>
-      </view>
+  <view class="flex-around" wx:for="{{playlist}}" wx:key="id">
+    <view class="nav-item">
+      <image class="nav-item-image" src="../../image/file.png"></image>
+      <view style="text-align:center">{{item.subscribedCount}}</view>
     </view>
-    <view wx:for="{{item.tracks}}"  wx:for-item="items" wx:for-index="idx" wx:key="idx">
-      <navigator url="../playing/playing?id={{items.id}}&playIndex={{idx}}">
-        <view class="flex-between">
-          <view class="s-idx">
-            <text>{{idx+1}}</text>
-          </view>
-          <view class="song flex-between">
-            <view>
-              <view>{{items.name}}</view>
-              <view style="color: #b6b3b3;margin-top: 5rpx">{{items.ar[0].name}}-{{items.name}}</view>
-            </view>
-          <view style="margin: auto 0" wx-if="{{items.mv!=0}}">
-            <image class="i-width-80" src="../../image/radio.png"></image>
-          </view>
-          </view>
+    <view class="nav-item">
+      <image class="nav-item-image" src="../../image/comment.png"></image>
+      <view style="text-align:center">{{item.commentCount}}</view>
+    </view>
+    <view class="nav-item">
+      <image class="nav-item-image" src="../../image/forward.png"></image>
+      <view style="text-align:center">{{item.shareCount}}</view>
+    </view>
+  </view>
+  <view class="nav-song" >
+    <view wx:for="{{playlist}}" wx:key="id" >
+      <view class="flex">
+        <view class="play">
+          <image class="i-width-40" src="../../image/pl-playall.png"></image>
         </view>
-      </navigator>
+        <view class="po">
+          <text>播放全部</text>
+          <text class="song-length">({{item.tracks.length}}首)</text>
+        </view>
+      </view>
+      <view wx:for="{{item.tracks}}"  wx:for-item="items" wx:for-index="idx" wx:key="idx">
+        <navigator url="../playing/playing?id={{items.id}}&playIndex={{idx}}">
+          <view class="flex-between">
+            <view class="s-idx">
+              <text>{{idx+1}}</text>
+            </view>
+            <view class="song flex-between">
+              <view>
+                <view>{{items.name}}</view>
+                <view style="color: #b6b3b3;margin-top: 5rpx">{{items.ar[0].name}}-{{items.name}}</view>
+              </view>
+            <view style="margin: auto 0" wx-if="{{items.mv!=0}}">
+              <image class="i-width-80" src="../../image/radio.png"></image>
+            </view>
+            </view>
+          </view>
+        </navigator>
+      </view>
     </view>
   </view>
-</view>
+</block>

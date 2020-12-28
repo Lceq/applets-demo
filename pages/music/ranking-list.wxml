@@ -29,7 +29,7 @@
     </view>
     <view class="play-list">
       <view class="play-item" wx:for="{{ranking.globalList}}"   wx:key="*this">
-        <navigator>
+        <navigator url="../playlist/playlist?id={{item.id}}">
           <view>
             <image class="i" src="{{item.coverImgUrl}}"></image>
           </view>

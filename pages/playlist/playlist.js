@@ -6,6 +6,7 @@ Page({
     privileges: [],
     playlist: [],
     cover: '',
+    isHidden: false
   },
   /**
    * 生命周期函数--监听页面加载
@@ -15,6 +16,9 @@ Page({
     
   },
   getPlaylistDetail(e){
+    this.setData({
+      isHidden: true
+    })
     return playlistDetail({
       id: e
     }).then(res => {
@@ -22,6 +26,7 @@ Page({
         this.setData({
           playlist: [res.playlist],
           privileges: res.privileges,
+          isHidden: false,
           cover: id2Url.id2Url('' + (res.playlist.coverImgId_str || res.playlist.coverImgId))
         })
         console.log(res);
