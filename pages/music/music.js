@@ -19,6 +19,7 @@ Page({
       {id: 3,name: '主播电台',},
       {id: 4,name: '排行榜',},
     ],
+    width: '91%',
     isHidden: false,
     songSheetLoading: false,
     tabIndex: 0,

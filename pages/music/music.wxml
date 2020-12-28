@@ -17,9 +17,17 @@
       <icon type="search" size="25" color="#666"></icon>
    </navigator>
 </view> -->
+<view class="flex-between header">
+   <view class="tab">
+      <tabs bind:clickTabItem="clickTabItem" tabsList="{{tabsList}}" tabIndex="{{tabIndex}}" width="{{width}}"></tabs>
+   </view>
+   <navigator url="../search/search" class="search">
+      <icon type="search" size="25" color="#666"></icon>
+   </navigator>
+</view>
+
 <view>
 <view style="color: red;padding-top:80rpx"></view>
-<tabs bind:clickTabItem="clickTabItem" tabsList="{{tabsList}}" tabIndex="{{tabIndex}}"></tabs>
 <!-- <import src="../component/tabs/tabs.wxml"></import>
 <template is="tabs" data="{{tabsList,tabIndex}}"></template> -->
 

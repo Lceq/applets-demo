@@ -8,12 +8,15 @@ Component({
       type: Number,
       value:0
     },
+    width:{
+      type: String,
+      value: '100%'
+    }
   },
   data: {
     userInfo:[
         {nickName:'username',avatarUrl:'userImg.jpg'}
-    ],
-    nickName:'nickName'
+    ]
   },
   methods:{
     clickTabItem(e){

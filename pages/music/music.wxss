@@ -1,5 +1,5 @@
 /* tab */
-.tab{
+/* .tab{
   font-size: 14px;
   background-color: rgba(240,240,240,.9);
   height: 80rpx;
@@ -19,6 +19,26 @@
 .active {
   color: #BB2C08;
   border-bottom-color: #BB2C08;
+} */
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 22;
+}
+.tab{
+  padding-right: 50rpx;
+}
+.search{
+  background-color: rgba(240,240,240,.9);
+  /* display: flex; */
+  /* justify-content: end; */
+  z-index: 2;
+  position: fixed;
+  right: 0;
+  top: -1rpx;
+  padding: 9rpx 5rpx;
+  /* border-bottom: 1px solid transparent; */
 }
 .banner {
   /* padding-top: 80rpx; */
