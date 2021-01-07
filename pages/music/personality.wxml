@@ -1,125 +1,130 @@
+<import src="../component/song-list-com.wxml"></import>
+<import src="../component/mv-list-com.wxml"></import>
 <template name="personality">
-  <!-- 轮播图 -->
-  <view class="banner">
-    <swiper indicator-dots="true" autoplay="true" >
-      <swiper-item  wx:for="{{personality.bannerList}}" wx:key="*this">
-        <image src="{{item.imageUrl}}" width="750" height="290"></image>
-      </swiper-item>
-      </swiper>
-  </view>
-  <!-- 导航 -->
-  <view>
-    <view class="nav">
-      <view>
-        <navigator url="../fm/fm">
-        <view class="nav-item">
-          <image src="../../image/fm/fm-nav.png"></image>
-         </view>
-        私人FM
-      </navigator>
-      </view>
-      <view>
-        <navigator url="../everyday-recommend/everyday">
-          <view class="nav-item">
-            <view class="days"> {{personality.thisday}}</view>
-          </view>
-          每日歌曲推荐
-        </navigator>
-      </view>
-      <view>
-        <navigator url="../playlist/playlist?id=3778678">
-          <view class="nav-item">
-            <image src="../../image/personality/hot-nav.png"></image>
-          </view>
-          云音乐热歌榜
-        </navigator>
-      </view>
+    <!-- 轮播图 -->
+    <view class="banner">
+        <swiper indicator-dots="true" autoplay="true">
+            <swiper-item wx:for="{{personality.bannerList}}" wx:key="*this">
+                <image src="{{item.imageUrl}}" width="750" height="290"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <!-- 导航 -->
+    <view>
+        <view class="nav">
+            <view>
+                <navigator url="../fm/fm">
+                    <view class="nav-item">
+                        <image src="../../image/fm/fm-nav.png"></image>
+                    </view>
+                    私人FM
+                </navigator>
+            </view>
+            <view>
+                <navigator url="../everyday-recommend/everyday">
+                    <view class="nav-item">
+                        <view class="days"> {{personality.thisday}}</view>
+                    </view>
+                    每日歌曲推荐
+                </navigator>
+            </view>
+            <view>
+                <navigator url="../playlist/playlist?id=3778678">
+                    <view class="nav-item">
+                        <image src="../../image/personality/hot-nav.png"></image>
+                    </view>
+                    云音乐热歌榜
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <!-- 推荐歌单 -->
+    <view>
+        <view class="play-nav">
+            <view>
+                <image src="../../image/personality/play-list.png" width="30"></image>
+                <text>推荐歌单</text>
+            </view>
+            <view bindtap="songMore" class="play-more">更多>></view>
+        </view>
+        
+        <view class="play-list">
+            <template data="{{list: personality.personalizList,isArtists: true,urls: '../playlist/playlist'}}" is='song-list-com'></template>
+            <!-- <view class="play-item" wx:for="{{personality.personalizList}}" wx:key="*this">
+                <navigator url="../playlist/playlist?id={{item.id}}">
+                    <view>
+                        <image class="i" src="{{item.picUrl}}"></image>
+                    </view>
+                    <view class="play-text">{{item.name}}</view>
+                </navigator>
+            </view> -->
+        </view>
     </view>
 
-  </view>
-  <!-- 推荐歌单 -->
-  <view>
-    <view class="play-nav">
-      <view>
-        <image src="../../image/personality/play-list.png" width="30"></image>
-        <text>推荐歌单</text>
-      </view>
-      <view bindtap="songMore" class="play-more">更多>></view>
+    <!-- 最新音乐 -->
+    <view>
+        <view class="play-nav">
+            <view>
+                <image src="../../image/personality/new-music.png" width="30"></image>
+                <text>最新音乐</text>
+            </view>
+            <view bindtap="moreMusic" class="play-more">更多>></view>
+        </view>
+        <view class="play-list">
+            <template data="{{list: personality.newSongList,isArtists: false}}" is='song-list-com'></template>
+            <!-- <view class="play-item" wx:for="{{personality.newSongList}}" wx:key="*this">
+                <navigator>
+                    <view>
+                        <image class="i" src="{{item.picUrl}}"></image>
+                    </view>
+                    <view class="new-name">{{item.name}}</view>
+                    <view class="name-art">{{item.song.artists[0].name}}</view>
+                </navigator>
+            </view> -->
+        </view>
     </view>
+    <!-- 推荐mv -->
+    <view>
+        <view class="play-nav">
+            <view>
+                <image src="../../image/personality/new-music.png" width="30"></image>
+                <text>推荐mv</text>
+            </view>
+            <view class="play-more">更多>></view>
+        </view>
+        <view class="play-list">
+            <template is="mv-list-com" data="{{list:personality.mvList,isNew: false,urls:'../mv/mv'}}"></template>
+            <!-- <view class="play-item" wx:for="{{personality.mvList}}" wx:key="*this">
+                <navigator url="../mv/mv?id={{item.id}}">
+                    <view>
+                        <image class="mv-i" src="{{item.picUrl}}"></image>
+                    </view>
+                    <view class="new-name">{{item.name}}</view>
+                    <view class="name-art">{{item.artists[0].name}}</view>
+                </navigator>
+            </view> -->
+        </view>
+    </view>
+    <!-- 主播电台 -->
+    <view>
+        <view class="play-nav">
+            <view>
+                <image src="../../image/personality/play-list.png" width="30"></image>
+                <text>主播电台</text>
+            </view>
+            <view bindtap="moreRedio" class="play-more">更多>></view>
+        </view>
 
-    <view class="play-list">
-      <view class="play-item" wx:for="{{personality.personalizList}}"  wx:key="*this">
-        <navigator url="../playlist/playlist?id={{item.id}}">
-          <view>
-            <image class="i" src="{{item.picUrl}}"></image>
-          </view>
-          <view class="play-text">{{item.name}}</view>
-        </navigator>
-      </view>
+        <view class="play-list">
+            <template data="{{list: personality.radioStationList,isArtists: true}}" is='song-list-com'></template>
+            <!-- <view class="play-item" wx:for="{{personality.radioStationList}}" wx:key="*this">
+                <navigator url="../program/program">
+                    <view>
+                        <image class="i" src="{{item.picUrl}}"></image>
+                    </view>
+                    <view class="play-text">{{item.name}}</view>
+                </navigator>
+            </view> -->
+        </view>
     </view>
-  </view>
-
-  <!-- 最新音乐 -->
-  <view>
-    <view class="play-nav">
-      <view>
-        <image src="../../image/personality/new-music.png" width="30"></image>
-        <text>最新音乐</text>
-      </view>
-      <view bindtap="moreMusic" class="play-more">更多>></view>
-    </view>
-    <view class="play-list">
-      <view class="play-item" wx:for="{{personality.newSongList}}"   wx:key="*this">
-        <navigator>
-          <view>
-            <image class="i" src="{{item.picUrl}}"></image>
-          </view>
-          <view class="new-name">{{item.name}}</view>
-          <view class="name-art">{{item.song.artists[0].name}}</view>
-        </navigator>
-      </view>
-    </view>
-  </view>
-  <!-- 推荐mv -->
-  <view>
-    <view class="play-nav">
-      <view>
-        <image src="../../image/personality/new-music.png" width="30"></image>
-        <text>推荐mv</text>
-      </view>
-      <view class="play-more">更多>></view>
-    </view>
-    <view class="play-list">
-      <view class="play-item" wx:for="{{personality.mvList}}"   wx:key="*this">
-        <navigator url="../mv/mv?mvid={{item.id}}">
-          <view>
-            <image class="mv-i" src="{{item.picUrl}}"></image>
-          </view>
-          <view class="new-name">{{item.name}}</view>
-          <view class="name-art">{{item.artists[0].name}}</view>
-        </navigator>
-      </view>
-    </view>
-  </view>
-  <!-- 主播电台 -->
-  <view>
-    <view class="play-nav">
-      <view>
-        <image src="../../image/personality/play-list.png" width="30"></image>
-        <text>主播电台</text>
-      </view>
-      <view bindtap="moreRedio" class="play-more">更多>></view>
-    </view>
-
-    <view class="play-list">
-      <view class="play-item" wx:for="{{personality.radioStationList}}"   wx:key="*this">
-        <navigator url="../program/program">
-          <view>
-            <image class="i" src="{{item.picUrl}}"></image>
-          </view>
-          <view class="play-text">{{item.name}}</view>
-        </navigator>
-      </view>
-    </view>
-  </view>
 </template>

@@ -1,0 +1,66 @@
+/* song-list-com */
+.ss{
+    color: brown;
+}
+.play-item {
+    flex: 1;
+  }
+  .i{
+    width: 235rpx;
+    height: 200rpx;
+  }
+  .play-text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    width: 95%;
+    height: 80rpx;
+    margin-bottom: 25rpx;
+  }
+  .name-art{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 10px;
+    width: 100%;
+    height: 30rpx;
+    margin-bottom: 25rpx;
+    color: #b6b3b3;
+  }
+  .new-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    width: 100%;
+    height: 40rpx;
+  }
+  /* mv-list-com */
+  .mv-i {
+    width: 360rpx;
+    height: 200rpx;
+  }
+  .cat-name{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    width: 100%;
+    height: 80rpx;
+  }
+  .cat-art {
+    position: relative;
+    width: 100%;
+    font-size: 10px;
+    /* background-color: rgba(95, 42, 42, 0.8); */
+    left: 10rpx;
+    top: -140rpx;
+    color: rgb(253, 249, 249);
+  }
+  .cat-num {
+    position: relative;
+    /* width: 60%; */
+    /* background-color: rgba(73, 65, 65, 0.6); */
+    right: 20rpx;
+    top: -310rpx;
+    color: rgb(253, 249, 249);
+    text-align: right;
+    font-size: 10px;
+  }

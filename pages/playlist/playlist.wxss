@@ -21,7 +21,7 @@
   z-index: -1;
 }
 .p-m-i{
-  width: 250rpx;
+  width: 360rpx;
   height: 250rpx;
   margin: 30rpx;
   position: relative;
@@ -43,8 +43,14 @@
   top: 186rpx;
   left: 150rpx;
 }
-.play-text{
+.detail-text{
   color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  width: 95%;
+  /* height: 80rpx; */
+  margin-bottom: 25rpx;
 }
 .text-w{
   font-size: 10px;

@@ -11,7 +11,7 @@
       <text class="">{{item.playCount}} </text>
       <image class="i-width-50 infor" src="../../image/infor.png"></image>
     </view>
-    <view class="play-text">
+    <view class="detail-text">
       <text class="text-title">{{item.name}}</text>
       <view class="flex" bindtap="userplaylist" data-userid="{{item.creator.userId}}">
         <image class="i-width-80" style="border-radius: 50%;" src="{{item.creator.avatarUrl}}"></image>

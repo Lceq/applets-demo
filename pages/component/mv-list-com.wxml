@@ -1,0 +1,24 @@
+<template name="mv-list-com">
+    <view hidden="{{isNew}}" class="play-item" wx:for="{{list}}" wx:key="*this">
+        <navigator url="{{urls}}?id={{item.id}}">
+            <view>
+                <image class="mv-i" src="{{item.picUrl}}"></image>
+            </view>
+            <view class="new-name">{{item.name}}</view>
+            <view class="name-art">{{item.artists[0].name}}</view>
+        </navigator>
+    </view>
+    <view  hidden="{{!isNew}}" class="play-item" wx:for="{{list}}" wx:key="*this">
+        <navigator style="height: 300rpx" url="{{urls}}?id={{item.id}}">
+            <view>
+                <image class="mv-i" src="{{item.coverImgUrl}}"></image>
+            </view>
+            <view class="cat-name">{{item.name}}</view>
+            <view class="cat-art">{{item.creator.nickname }}</view>
+            <view class="cat-num">
+                <image class="class-p" src="../../image/personality/p0.png"></image>
+                <text> {{item.playCount}}</text>
+            </view>
+        </navigator>
+    </view>
+</template>

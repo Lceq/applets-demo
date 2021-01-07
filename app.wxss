@@ -1,4 +1,5 @@
 @import "./utils/common.wxss";
+@import "./utils/tem.wxss";
 
 page {
 	background-size: 100% 100%;

@@ -1,42 +1,48 @@
+<import src="../component/song-list-com.wxml"></import>
 <template name="ranking-list">
-  <!-- 云音乐官方榜 -->
-  <view class="banner">
-    <view style="" class="pro-re-text">
-      <text class="p-t">云音乐官方榜</text>
-    </view>
-    <view wx:for="{{ranking.officialList}}" wx:key="*this">
-      <navigator url="../playlist/playlist?id={{item.id}}">
-        <view class="flex">
-          <image class="rabk-i" src="{{item.coverImgUrl}}"></image>
-          <view class="rank-text" >
-            <view class="rank-t-i" wx:for-items="{{item.tracks}}" wx:key="*this"  wx:for-item='t' wx:for-index="idx">{{idx+1}}. {{t.first}}- {{t.second}} </view>
-          </view>
+    <!-- 云音乐官方榜 -->
+    <view class="banner">
+        <view style="" class="pro-re-text">
+            <text class="p-t">云音乐官方榜</text>
         </view>
-      </navigator>
-    </view>
-    <view wx:for="{{ranking.singerList}}" wx:key="*this">
-      <navigator>
-        <view class="flex">
-          <image class="rabk-i" src="{{item.coverUrl}}"></image>
-          <view class="rank-text" >
-            <view class="rank-t-i" wx:for-items="{{item.artists}}" wx:key="*this"  wx:for-item='t' wx:for-index="idx">{{idx+1}}. {{t.first}}- {{t.third}} </view>
-          </view>
+        <view wx:for="{{ranking.officialList}}" wx:key="*this">
+            <navigator url="../playlist/playlist?id={{item.id}}">
+                <view class="flex">
+                    <image class="rabk-i" src="{{item.coverImgUrl}}"></image>
+                    <view class="rank-text">
+                        <view class="rank-t-i" wx:for-items="{{item.tracks}}" wx:key="*this" wx:for-item='t'
+                            wx:for-index="idx">
+                            {{idx+1}}. {{t.first}}- {{t.second}} </view>
+                    </view>
+                </view>
+            </navigator>
         </view>
-      </navigator>
+        <view wx:for="{{ranking.singerList}}" wx:key="*this">
+            <navigator>
+                <view class="flex">
+                    <image class="rabk-i" src="{{item.coverUrl}}"></image>
+                    <view class="rank-text">
+                        <view class="rank-t-i" wx:for-items="{{item.artists}}" wx:key="*this" wx:for-item='t'
+                            wx:for-index="idx">
+                            {{idx+1}}. {{t.first}}- {{t.third}} </view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+        <view style="" class="pro-re-text">
+            <text class="p-t">全球榜</text>
+        </view>
+        <view class="play-list">
+            <template is="song-list-com" data="{{list: ranking.globalList,isArtists: true,urls:'../playlist/playlist'}}"></template>
+            <!-- <view class="play-item" wx:for="{{ranking.globalList}}" wx:key="*this">
+                <navigator url="../playlist/playlist?id={{item.id}}">
+                    <view>
+                        <image class="i" src="{{item.coverImgUrl}}"></image>
+                    </view>
+                    <view class="play-text">{{item.name}}</view>
+                </navigator>
+            </view> -->
+        </view>
     </view>
-    <view style="" class="pro-re-text">
-      <text class="p-t">全球榜</text>
-    </view>
-    <view class="play-list">
-      <view class="play-item" wx:for="{{ranking.globalList}}"   wx:key="*this">
-        <navigator url="../playlist/playlist?id={{item.id}}">
-          <view>
-            <image class="i" src="{{item.coverImgUrl}}"></image>
-          </view>
-          <view class="play-text">{{item.name}}</view>
-        </navigator>
-      </view>
-    </view>
-  </view>
 
 </template>

@@ -1,26 +1,27 @@
-
+<import src="../component/mv-list-com.wxml"></import>
 <template name="song-sheet">
-  <view class="cat">
-     <view class="all">
-       <text>全部歌单</text>
-     </view>
-    <view class="select-cat">
-       选择分类
+    <view class="cat">
+        <view class="all">
+            <text>全部歌单</text>
+        </view>
+        <view class="select-cat">
+            选择分类
+        </view>
     </view>
-  </view>
-  <view class="play-list">
-      <view class="play-item" wx:for="{{songSheet.playlists}}"  wx:key="*this">
-        <navigator style="height: 300rpx" url="../playlist/playlist?id={{item.id}}">
-          <view>
-            <image class="mv-i" src="{{item.coverImgUrl}}"></image>
-          </view>
-          <view class="cat-name">{{item.name}}</view>
-          <view class="cat-art">{{item.creator.nickname }}</view>
-          <view class="cat-num">
-            <image class="class-p" src="../../image/personality/p0.png"></image>
-            <text> {{item.playCount}}</text>
-          </view>
-        </navigator>
-      </view>
-  </view>
+    <view class="play-list">
+        <template is="mv-list-com" data="{{list: songSheet.playlists,isNew: true,urls:'../playlist/playlist'}}"></template>
+        <!-- <view class="play-item" wx:for="{{songSheet.playlists}}" wx:key="*this">
+            <navigator style="height: 300rpx" url="../playlist/playlist?id={{item.id}}">
+                <view>
+                    <image class="mv-i" src="{{item.coverImgUrl}}"></image>
+                </view>
+                <view class="cat-name">{{item.name}}</view>
+                <view class="cat-art">{{item.creator.nickname }}</view>
+                <view class="cat-num">
+                    <image class="class-p" src="../../image/personality/p0.png"></image>
+                    <text> {{item.playCount}}</text>
+                </view>
+            </navigator>
+        </view> -->
+    </view>
 </template>

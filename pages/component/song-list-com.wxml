@@ -1,0 +1,13 @@
+<template name="song-list-com">
+    <view class="play-item" wx:for="{{list}}" wx:key="*this">
+        <navigator url="{{urls}}?id={{item.id}}">
+            <view>
+                <image class="i" src="{{item.picUrl || item.coverImgUrl}}"></image>
+            </view>
+            <!-- isArtists===true 隐藏 -->
+            <view class="play-text" hidden="{{!isArtists}}">{{item.name}}</view>
+            <view class="new-name" hidden="{{isArtists}}">{{item.name}}</view>
+            <view class="name-art" hidden="{{isArtists}}">{{item.song.artists[0].name}}</view>
+        </navigator>
+    </view>
+</template>

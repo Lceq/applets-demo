@@ -32,7 +32,7 @@ Page({
   },
   onLoad: function (options) {
     this.setData({
-      mvid: options.mvid
+      mvid: options.id
     })
     this.getMvDetailRequest();
     this.getMvUrlRequest();
